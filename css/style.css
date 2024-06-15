@@ -1,0 +1,169 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:300);
+
+.login-page {
+  width: 360px;
+  padding: 8% 0 0;
+  margin: auto;
+}
+.form {
+  position: relative;
+    z-index: 1;
+    background: linear-gradient(1deg, rgb(255 243 243 / 2%), #ffffff45, #ffffff00);
+    max-width: 360px;
+    margin: 0 auto 100px;
+    padding: 45px;
+    text-align: center;
+    /* box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24); */
+    border-radius: 7px;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-image: linear-gradient(#f6b73c00, #2c570bd4, #ff000000) 30;
+    position: relative;
+
+}
+.form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+  border-radius: 7px;
+
+}
+.form button {
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  outline: 0;
+  background-image: linear-gradient(45deg, #76b852, #46df4c, #4caf50);
+  width: 100%;
+  border: 0;
+  padding: 15px;
+  color: #FFFFFF;
+  font-size: 14px;
+  -webkit-transition: all 0.3 ease;
+  transition: all 0.3 ease;
+  cursor: pointer;
+  border-radius: 7px;
+}
+.form button:hover,.form button:active,.form button:focus {
+  background-image: linear-gradient(45deg, #1a651d, #4caf50, #1a651d);
+}
+.form .message {
+  margin: 15px 0 0;
+  color: #000000;
+  font-size: 12px;
+}
+.form .message a {
+  color: #0006ff;
+  text-decoration: none;
+}
+.form .register-form {
+  display: none;
+
+}
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 300px;
+  margin: 0 auto;
+}
+.container:before, .container:after {
+  content: "";
+  display: block;
+  clear: both;
+
+}
+.container .info {
+  margin: 50px auto;
+  text-align: center;
+}
+.container .info h1 {
+  margin: 0 0 15px;
+  padding: 0;
+  font-size: 36px;
+  font-weight: 300;
+  color: #1a1a1a;
+}
+.container .info span {
+  color: #4d4d4d;
+  font-size: 12px;
+}
+.container .info span a {
+  color: #000000;
+  text-decoration: none;
+}
+.container .info span .fa {
+  color: #EF3B3A;
+}
+body {
+/*  background: #76b852; /* fallback for old browsers
+  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
+  background: -moz-linear-gradient(right, #76b852, #8DC26F);
+  background: -o-linear-gradient(right, #76b852, #8DC26F);
+  background: linear-gradient(to left, #76b852, #8DC26F);*/
+  font-family: "Roboto", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: linear-gradient(45deg, #76b852, #46df4c, #76b852);
+}
+
+.modal {
+  background-color: rgb(223, 28, 28);
+  /* background-color: rgb(29, 4, 255); */
+  color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  display: none;
+  font-size: 20px;
+  font-weight: bold;
+  position: absolute;
+  z-index: 999;
+  right: 10px;
+  top: 10px;
+  transition: all 1s linear;
+}
+.pI{
+  height: 100px;
+}
+.img1{
+  width: 100px;
+    height: 100px;
+}
+.username-validation , .password-validation{
+  color: red;
+  text-shadow: 0px 0px 8px black;
+  display: none;
+}
+.modal{
+  box-shadow: 0px 0px 20px 0px black;
+}
+.box{
+  width: 5px;
+  height: 10px;
+  display: block;
+  float: right;
+  margin-top: 20%;
+  margin-right: -6px;
+  border: #0000000f solid;
+  border-width: 1px 1px 1px 0px;
+}
+.lomp{
+  width: 10px;
+  height: 10px;
+  display: block;
+  float: right;
+  margin-right: -12px;
+  border: #00000012 solid;
+  border-width: 1px 1px 1px 0px;
+  margin-top: -1px;
+  border-radius: 0px 95px 95px 0px;
+  background-color: yellow;
+}
+
