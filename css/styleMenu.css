@@ -226,6 +226,31 @@ box{
     nav .start-home, a:nth-child(1):hover~.animation {
         width: 60px;
     }
+    nav .start-home, a:nth-child(1):hover~.animation {
+        width: 60px;
+        left: 0;
+        background-color: #d200fc;
+    }
+    nav .start-about, a:nth-child(2):hover~.animation {
+        width: 60px;
+        left: 60px;
+        background-color: #f81a01;
+    }
+    nav .start-blog, a:nth-child(3):hover~.animation {
+        width: 60px;
+        left: 120px;
+        background-color: #0095f8;
+    }
+    nav .start-portefolio, a:nth-child(4):hover~.animation {
+        width: 60px;
+        left: 180px;
+        background-color: #03fca9;
+    }
+    nav .start-contact, a:nth-child(5):hover~.animation {
+        width: 60px;
+        left: 240px;
+        background-color: #ff7700;
+    }
 }
 @media (max-width: 600px) {
     .divBox {
