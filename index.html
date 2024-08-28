@@ -5,6 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="css/style.css">
     <title>Pidaret</title>
 </head>
@@ -12,19 +16,30 @@
 <body>
 
     <div class="login-page">
-        <box class="box">
-            <lomp class="lomp"></lomp>
+        <box class="box" id="title">
+            <lomp class="lomp" id="lomp"></lomp>
         </box>
-        <div class="form">
-            <p class="pI"><img src="C:\Users\Parisa\OneDrive\Desktop\Blacker.js\image\363639-200.png" alt="IMG" class="img1"></p>
-                <input type="text" placeholder="username" class="username"  onblur="usernameValidation()" />
-                <span class="username-validation">At least 12 characters</span>
-                <input type="password" placeholder=" password" class="password"  onblur="passwordValidation()" />
-                <span class="password-validation">At least 8 characters</span>
-                <button onclick="dataValidation()">login</button>
-                <p class="message">Not registered? <a href="index2.html" target="_blank">Create an account</a></p>
-        </div>
-    </div>
+                <dddd class="center">
+                    <div class="form" >
+
+                            <p class="pI"><img src="C:\Users\Parisa\OneDrive\Desktop\Blacker.js\image\363639-200.png" alt="IMG" class="img1"></p>
+                                <input type="text" placeholder="username" class="username"  onblur="usernameValidation()" />
+                                <span class="username-validation">At least 12 characters</span>
+                            <div class="form-element">
+                                <input type="password" placeholder=" password" class="password"  id="password-field"  onblur="passwordValidation()" />
+                                <span class="password-validation">At least 8 characters</span>
+                                <div class="toggle-password">
+                                <i class="fa fa-eye"></i>
+                                <i class="fa fa-eye-slash"></i>
+
+                            </div>
+                        </div>
+
+                                <button onclick="dataValidation()">login</button>
+                            <p class="message">Not registered? <a href="index2.html" target="_blank">Create an account</a></p>
+                        </div>
+                 </div>
+            </dddd>
 
     <div class="modal">
         <p1>please submit your  information correctly</p1>
