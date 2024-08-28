@@ -102,9 +102,7 @@ span {
     filter: drop-shadow(0px 0px 10px #00fbac);
 }
 
-.a2{
-    font-size: 11px;
-}
+
 * {
 	margin: 0;
 	padding: 0;
@@ -207,9 +205,6 @@ box{
     }
     a:nth-child(1) {
         width: 60px;
-    }
-    .a2 {
-        font-size: 6px;
     }
     a:nth-child(2) {
         width: 60px;
