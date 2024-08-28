@@ -123,3 +123,15 @@ let boxElem = $.getElementsByClassName('box')
 btn.addEventListener('dblclick', function () {
     boxElem[0].remove()
 })
+
+// let passwordElem = $.getElementById('password-field')
+
+// function copyHandler(event) {
+//     event.preventDefault()
+// }
+// function cutHandler(event) {
+//     event.preventDefault()
+// }
+
+// passwordElem.addEventListener('copy', copyHandler)
+// passwordElem.addEventListener('cut', cutHandler)
