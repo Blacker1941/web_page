@@ -2,6 +2,7 @@ body {
   background-image: url(../image/sky.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
 }
 .fnameInput,
 .lnameInput,
@@ -46,3 +47,19 @@ body {
   border-right: 1px solid;
   border-image: linear-gradient(#f6b73c00, #148ffd61, #ff000000) 30;
 }
+@media (max-width: 767px) {
+  .container {
+      width: 400px;
+  }
+}
+@media (max-width: 440px) {
+  .container {
+      width: 270px;
+  }
+}
+@media (max-height: 650px) {
+  .container {
+    height: 470px;
+  }
+}
+

@@ -125,7 +125,7 @@ span {
 	top: 0;
 	right: 0;
 	text-align: center;
-	margin-right: 1.6rem;
+	margin-right: 1%;
 	font-size: 0.8rem;
 	-webkit-writing-mode: vertical-rl;
 		-ms-writing-mode: tb-rl;
@@ -166,4 +166,135 @@ box{
     margin-top: 1%;
     border-radius: 5%;
     border: 1px solid #000000;
+}
+@media (max-width: 1010px) {
+    .divBox {
+        margin-left: 37%;
+    }
+}
+@media (max-width: 700px) {
+    .divBox {
+        margin-left: 30%;
+    }
+}
+@media (max-width: 650px) {
+    .divBox {
+        margin-left: 30%;
+    }
+    nav {
+        margin: 27px auto 0;
+        position: relative;
+        width: 300px;
+        height: 50px;
+        background-color: #000000;
+        border-radius: 8px;
+        font-size: 0;
+        border: 1px #00fbac solid;
+    }
+    nav a {
+        line-height: 47px;
+        height: 100%;
+        font-size: 9px;
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        text-decoration: none;
+        text-transform: uppercase;
+        text-align: center;
+        color: white;
+        cursor: pointer;
+        color: #00fbac;
+    }
+    a:nth-child(1) {
+        width: 60px;
+    }
+    .a2 {
+        font-size: 6px;
+    }
+    a:nth-child(2) {
+        width: 60px;
+    }
+    a:nth-child(3) {
+        width: 60px;
+    }
+    a:nth-child(4) {
+        width: 60px;
+    }
+    a:nth-child(5) {
+        width: 60px;
+    }
+    nav .start-home, a:nth-child(1):hover~.animation {
+        width: 60px;
+    }
+}
+@media (max-width: 600px) {
+    .divBox {
+        margin-left: 27%;
+    }
+}
+@media (max-width: 520px) {
+    .divBox {
+        margin-left: 24%;
+    }
+}
+@media (max-width: 450px) {
+    .divBox {
+        margin-left: 24%;
+    }
+    .divBox {
+        height: 200px;
+        width: 150px;
+        background-color: white;
+        margin-top: 1%;
+        border-radius: 5%;
+        border: 1px solid #000000;
+    }
+    box {
+        height: 150px;
+        width: 118px;
+        border: 1px solid #333;
+        transition: all 0.4s ease;
+        display: block;
+        background: wheat;
+        border-radius: 5px;
+        margin-left: 10%;
+        position: relative;
+        top: 5%;
+    }
+    .input {
+        width: 114px;
+        height: 22px;
+        border-radius: 6px;
+        margin-left: 10%;
+        margin-top: 10%;
+        font-size: 10px;
+    }
+}
+@media (max-width: 315px) {
+    p{
+        font-size: 111%;
+    }
+    ul#navigation {
+        margin-right: -5%;
+    }
+}
+@media (max-width: 273px) {
+    ul#navigation {
+        margin-right: -11%;
+    }
+}
+@media (max-width: 251px) {
+    ul#navigation {
+        margin-right: -20%;
+    }
+}
+@media (max-width: 215px) {
+    ul#navigation {
+        margin-right: -41%;
+    }
+}
+@media (max-width: 208px) {
+    ul#navigation {
+        margin-right: -48%;
+    }
 }
