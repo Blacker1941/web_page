@@ -1,4 +1,6 @@
-﻿let countrySelectBox = document.querySelector('.countrySelect')
+﻿let $ = document
+
+let countrySelectBox = document.querySelector('.countrySelect')
 let citySelect = document.querySelector('.citySelect')
 
 let countriesData = {

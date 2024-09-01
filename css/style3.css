@@ -84,3 +84,57 @@ h1.temp {
   top: 0;
   left: 20px;
 }
+ul {
+  list-style: none;
+}
+.context-menu {
+  position: absolute;
+  font-size: 18px;
+  box-shadow: 0px 0px 20px -5px black;
+}
+.menu {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgb(64 64 64 / 5%);
+  padding: 10px 0;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin: 0;
+}
+.menu > li > a {
+  font: inherit;
+  border: 0;
+  padding: 10px 30px 10px 15px;
+  width: 79%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  text-decoration: unset;
+  color: #000;
+  font-weight: 500;
+  transition: 0.5s linear;
+  -webkit-transition: 0.5s linear;
+  -moz-transition: 0.5s linear;
+  -ms-transition: 0.5s linear;
+  -o-transition: 0.5s linear;
+}
+.menu > li > a:hover {
+  background:#f1f3f7;
+  color: #006443;
+}
+.menu > li > a > i {
+  padding-right: 10px;
+}
+.menu > li.trash > a:hover {
+  color: red;
+}
+.fist_a{
+  padding-top: 20px;
+  border-radius: 10px 15px 0px 0px;
+}
+.last_a{
+  padding-bottom: 20px;
+  border-radius: 0px 0px 10px 10px;
+}

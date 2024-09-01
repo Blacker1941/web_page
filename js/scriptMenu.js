@@ -224,3 +224,34 @@ input.addEventListener("input", () => {
     // Author
     console.log('File Name / scriptMenu.js\nCreated Date / August 19, 2024\nAuthor / Blacker ');
 })();
+
+const contextMenu = $.getElementById('contextMenu')
+
+
+function contextHandler(event) {
+  event.preventDefault()
+
+  if (contextMenu.style.display === 'none') {
+
+    contextMenu.style.left = event.pageX + 'px'
+    contextMenu.style.top = event.pageY + 'px'
+
+    contextMenu.style.display = 'block'
+  } else {
+    contextMenu.style.left = event.pageX + 'px'
+    contextMenu.style.top = event.pageY + 'px'
+  }
+}
+
+function clickConTextMenu() {
+  contextMenu.style.display = 'none'
+}
+
+function keyDownHandler(event) {
+  if (event.keyCode === 27)
+    contextMenu.style.display = 'none'
+}
+
+$.body.addEventListener('contextmenu', contextHandler)
+$.body.addEventListener('click', clickConTextMenu)
+$.body.addEventListener('keydown', keyDownHandler)
