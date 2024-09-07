@@ -9,7 +9,7 @@ function dataValidation() {
     let userNameValue = userNameInput.value
     let passwordValue = passWordInput.value
 
-    if (userNameValue.length < 12 || passwordValue.length < 8) {
+    if (userNameValue.length < 13 || passwordValue.length < 8) {
         // alert('Error')
         modal.style.background = 'rgb(223, 28, 28)'
         modal.innerHTML = 'لطفا اطلاعات را به درستی وارد نمایید'
@@ -59,7 +59,7 @@ let passwordMessage = $.querySelector('.password-validation')
 
 
 function usernameValidation() {
-    if (usernameInput.value.length < 12) {
+    if (usernameInput.value.length < 13) {
         usernameMessage.style.display = 'block'
         userNameInput.style["boxShadow"] = "0px 0px 20px 0px red"
         usernameMessage.style["padding-bottom"] = "13px"
@@ -135,3 +135,11 @@ btn.addEventListener('dblclick', function () {
 
 // passwordElem.addEventListener('copy', copyHandler)
 // passwordElem.addEventListener('cut', cutHandler)
+
+const inputElem = $.querySelector('form input')
+const spanElem = $.querySelector('.counter')
+const inputMaxLength = inputElem.getAttribute('maxlength')
+
+inputElem.addEventListener('keyup', function () {
+    spanElem.innerHTML = inputMaxLength - inputElem.value.length
+})

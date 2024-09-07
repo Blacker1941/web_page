@@ -9,6 +9,7 @@
     rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v3.0.6/css/solid.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Pidaret</title>
 </head>
@@ -20,11 +21,13 @@
             <lomp class="lomp" id="lomp"></lomp>
         </box>
                 <dddd class="center">
-                    <div class="form" >
-
+                    <div class="form">
                             <p class="pI"><img src="C:\Users\Parisa\OneDrive\Desktop\Blacker.js\image\363639-200.png" alt="IMG" class="img1"></p>
-                                <input type="text" placeholder="username" class="username"  onblur="usernameValidation()" />
-                                <span class="username-validation">At least 12 characters</span>
+                            <form action="#" class="form1">
+                                <input type="text" placeholder="username" class="username" id="username"  onblur="usernameValidation()"spellcheck="false" maxlength="19" required />
+                                <i class="uis uis-at"></i>
+                                <span class="counter">19</span></form>
+                                <span class="username-validation">At least 13 characters</span>
                             <div class="form-element">
                                 <input type="password" placeholder=" password" class="password"  id="password-field"  onblur="passwordValidation()" />
                                 <span class="password-validation">At least 8 characters</span>
