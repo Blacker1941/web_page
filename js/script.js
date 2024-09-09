@@ -161,11 +161,7 @@ function hideModalWithX () {
 }
 
 function hideModalWithEsc(event) {
-    console.log(event);
     if (event.keyCode === 13) {
-        modalParent.style.display = 'none'
-        sectionElem.style.filter = 'blur(0px)'
-
     }
 }
 function hideModalWithEsc(event) {
