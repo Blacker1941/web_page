@@ -100,11 +100,6 @@
   color: #EF3B3A;
 }
 body {
-/*  background: #76b852; /* fallback for old browsers
-  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
-  background: -moz-linear-gradient(right, #76b852, #8DC26F);
-  background: -o-linear-gradient(right, #76b852, #8DC26F);
-  background: linear-gradient(to left, #76b852, #8DC26F);*/
   font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -334,4 +329,86 @@ form input:valid ~ .counter{
 }
 section{
   transition: 2s;
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+.dark a {
+  color: rgb(246, 169, 241);
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px;
+}
+
+.switch {
+  width: 80px;
+  height: 40px;
+  border-radius: 20px;
+  background-color: rgb(12 12 12 / 11%);
+  position: relative;
+  border: 1px solid #00000040;
+  transition: 0.3s;
+}
+
+.flicker {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  transition: 0.3s;
+  box-shadow: inset 4px 4px 4px rgb(255, 255, 255),
+    inset -4px -4px 4px rgb(195 193 198 / 90%);
+}
+
+.dark {
+  background-image: linear-gradient(45deg, #287502, #039708, #287502);
+  transition: 0.3s;
+}
+
+.moon {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 0 rgb(255, 255, 255);
+  position: absolute;
+  top: 5px;
+  left: 45px;
+}
+
+.dark .flicker {
+  transform: translateX(40px);
+  transition: 0.3s;
+}
+
+.dark > * {
+  color: rgb(255, 255, 255);
+}
+
+.fa{
+  color: black;
+}
+.dark .switch{
+  background-color: rgb(12 12 12 / 38%);
+  border: 1px solid #00000078;
+  transition: 0.3s;
+}
+.dark .sun{
+  width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 20px yellow;
+    position: absolute;
+    top: 10px;
+    left: 13px;
+    background-color: yellow;
+    transition: 0.3s;
+}
+.sun{
+    box-shadow: 0px 0px 20px 20px rgba(255, 255, 0, 0);
+    background-color: rgba(255, 255, 0, 0);
+    transition: 0.3s;
 }

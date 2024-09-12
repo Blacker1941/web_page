@@ -27,9 +27,28 @@ searchBtn.addEventListener('click', function () {
       $.querySelector('.weather').classList.remove('loading')
     } else {
       alert('شهر مورد نظر را به درستی وارد نمایید')
-    }
+  }
+})
 
-  })
+searchBar.addEventListener('keydown', function (event) {
+  if (event.keyCode === 13) {
+    let searchBarValue = searchBar.value
+    let mainCityDatas = citiesData[searchBarValue]
+
+    console.log(mainCityDatas)
+
+    if (mainCityDatas) {
+      $.querySelector('.city').innerHTML = "Weather in " + mainCityDatas.city
+      $.querySelector('.temp').innerHTML = mainCityDatas.temp + '°C'
+      $.querySelector('.description').innerHTML = mainCityDatas.weather
+      $.querySelector('.humidity').innerHTML = "Humidity: " +  mainCityDatas.humidity
+      $.querySelector('.wind').innerHTML = "Wind speed: " +  mainCityDatas.windSpeed + 'km/h'
+      $.querySelector('.weather').classList.remove('loading')
+    } else {
+      alert('شهر مورد نظر را به درستی وارد نمایید')
+  }
+  }
+})
 
 // let citiesData = [
 //   {city: 'tehran ', temp: 12, weather: 'sunney', humidity: 23, windSpeed: 32 },

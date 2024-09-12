@@ -174,3 +174,24 @@ function hideModalWithEsc(event) {
 button.addEventListener('click', showModal)
 x.addEventListener('click', hideModalWithX)
 document.body.addEventListener('keyup', hideModalWithEsc)
+
+const switchElement = document.querySelector('.switch')
+
+switchElement.addEventListener('click', function () {
+    $.body.classList.toggle('dark')
+
+    if (document.body.className.includes('dark')) {
+        localStorage.setItem('theme', 'dark')
+    } else {
+        localStorage.setItem('theme', 'light')
+    }
+})
+
+
+window.onload = function () {
+    let localStorageTheme = localStorage.getItem('theme')
+
+    if (localStorageTheme === 'dark') {
+        $.body.classList.add('dark')
+    }
+}

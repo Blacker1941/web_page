@@ -255,3 +255,24 @@ function keyDownHandler(event) {
 $.body.addEventListener('contextmenu', contextHandler)
 $.body.addEventListener('click', clickConTextMenu)
 $.body.addEventListener('keydown', keyDownHandler)
+
+const switchElement = document.querySelector('.switch')
+
+switchElement.addEventListener('click', function () {
+    $.body.classList.toggle('dark')
+
+    if (document.body.className.includes('dark')) {
+        localStorage.setItem('theme3', 'dark')
+    } else {
+        localStorage.setItem('theme3', 'light')
+    }
+})
+
+
+window.onload = function () {
+    let localStorageTheme = localStorage.getItem('theme3')
+
+    if (localStorageTheme === 'dark') {
+        $.body.classList.add('dark')
+    }
+}
