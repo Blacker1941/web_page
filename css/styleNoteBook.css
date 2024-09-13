@@ -14,7 +14,8 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    background-color: black;
+    background-color: white;
+    transition: 0.3s;
   }
 
   section {
@@ -170,4 +171,78 @@
 }
 .color-box{
     cursor: pointer;
+}
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 30px;
+  padding-right: 4%;
+}
+
+.switch {
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(53 51 51 / 80%);
+    position: relative;
+    border: 1px solid #000000;
+    transition: 0.3s;
+}
+
+.flicker {
+  width: 30px;
+  height: 30px;
+  border-radius: 15px;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  transition: 0.3s;
+  box-shadow: inset 4px 4px 4px rgb(255, 255, 255),
+    inset -4px -4px 4px rgb(195 193 198 / 90%);
+}
+
+.moon {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  box-shadow: 4px 4px 0 0 rgb(255, 255, 255);
+  position: absolute;
+  top: 5px;
+  left: 45px;
+}
+
+.dark .flicker {
+  transform: translateX(40px);
+  transition: 0.3s;
+}
+.dark .switch{
+  transition: 0.3s;
+}
+.dark .sun{
+  width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px 20px yellow;
+    position: absolute;
+    top: 10px;
+    left: 13px;
+    background-color: yellow;
+    transition: 0.3s;
+}
+.sun{
+    box-shadow: 0px 0px 20px 20px rgba(255, 255, 0, 0);
+    background-color: rgba(255, 255, 0, 0);
+    transition: 0.3s;
+}
+.dark{
+  background-color: black;
+  transition: 0.3s;
+}
+.dark .switch{
+  background-color: rgb(12 12 12);
+  border: 1px solid white ;
+  transition: 0.3s;
 }

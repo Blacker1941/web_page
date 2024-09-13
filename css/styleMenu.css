@@ -3,10 +3,11 @@ nav {
     position: relative;
     width: 590px;
     height: 50px;
-    background-color: #000000;
+    background-color: white;
     border-radius: 8px;
     font-size: 0;
-    border: 1px #00fbac solid;
+    border: 1px black solid;
+    transition: 0.3s;
 
 }
 nav a {
@@ -21,7 +22,8 @@ nav a {
     text-align: center;
     color: white;
     cursor: pointer;
-    color: #00fbac;
+    color: black;
+    transition: 0.3s;
 }
 nav .animation {
 	position: absolute;
@@ -64,7 +66,7 @@ nav .start-blog, a:nth-child(3):hover~.animation {
 nav .start-portefolio, a:nth-child(4):hover~.animation {
 	width: 160px;
 	left: 310px;
-	background-color: #03fca9;
+	background-color: #5dbe7a;;
 }
 nav .start-contact, a:nth-child(5):hover~.animation {
 	width: 120px;
@@ -90,16 +92,16 @@ h1 {
 
 p {
 	text-align: center;
-    color: #ecf0f1;
+    color: black;
     font-family: 'Cherry Swash', cursive;
     font-size: 16px;
     text-shadow: 2px 2px 4px #00fbac;
 }
 
 span {
-    color: #00fbac;
+    color: black;
     text-transform: uppercase;
-    filter: drop-shadow(0px 0px 10px #00fbac);
+    filter: drop-shadow(0px 0px 10px black);
 }
 
 
@@ -111,10 +113,11 @@ span {
 
   canvas#canvas {
 	display: block;
-    background: #000;
+    background: #ffffff;
     position: fixed;
     top: 0;
     z-index: -1;
+    transition: 0.3s;
   }
 
   ul#navigation {
@@ -132,7 +135,8 @@ span {
 
   ul#navigation > li {
 	display: inline-block;
-	color: #FFF;
+	color: black;
+    transition: 0.3s;
   }
 
 box{
@@ -239,7 +243,7 @@ box{
     nav .start-portefolio, a:nth-child(4):hover~.animation {
         width: 60px;
         left: 180px;
-        background-color: #03fca9;
+        background-color: #5dbe7a;
     }
     nav .start-contact, a:nth-child(5):hover~.animation {
         width: 60px;
@@ -403,11 +407,6 @@ header {
     inset -4px -4px 4px rgb(195 193 198 / 90%);
 }
 
-.dark {
-  background-image: linear-gradient(45deg, #287502, #039708, #287502);
-  transition: 0.3s;
-}
-
 .moon {
   width: 20px;
   height: 20px;
@@ -443,4 +442,29 @@ header {
     box-shadow: 0px 0px 20px 20px rgba(255, 255, 0, 0);
     background-color: rgba(255, 255, 0, 0);
     transition: 0.3s;
+}
+.dark canvas#canvas {
+    background: black;
+    transition: 0.3s;
+}
+.dark nav{
+    background-color: black;
+    border: 1px #00fbac solid;
+    transition: 0.3s;
+}
+.dark nav a {
+    color: #00fbac;
+    transition: 0.3s;
+}
+.dark ul#navigation > li {
+    color: white;
+    transition: 0.3s;
+}
+.dark span {
+    color: #00fbac;
+    filter: drop-shadow(0px 0px 10px #00fbac);
+    transition: 0.3s;
+}
+.dark p {
+    color: #ecf0f1;
 }

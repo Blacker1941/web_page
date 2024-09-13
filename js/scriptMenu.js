@@ -274,5 +274,7 @@ window.onload = function () {
 
     if (localStorageTheme === 'dark') {
         $.body.classList.add('dark')
+    } else {
+      $.body.classList.remove('dark')
     }
 }
