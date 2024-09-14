@@ -66,15 +66,15 @@ switchElement.addEventListener('click', function () {
     $.body.classList.toggle('dark')
 
     if (document.body.className.includes('dark')) {
-        localStorage.setItem('themeNote', 'dark')
+        localStorage.setItem('theme', 'dark')
     } else {
-        localStorage.setItem('themeNote', 'light')
+        localStorage.setItem('theme', 'light')
     }
 })
 
 
 window.onload = function () {
-    let localStorageTheme = localStorage.getItem('themeNote')
+    let localStorageTheme = localStorage.getItem('theme')
 
     if (localStorageTheme === 'dark') {
         $.body.classList.add('dark')

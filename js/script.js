@@ -118,11 +118,11 @@ togglePassword[0].addEventListener("click", function () {
 
 let btn = $.querySelector('lomp')
 let lompElem = $.getElementById('titel')
-let boxElem = $.getElementsByClassName('box')
+// let boxElem = $.getElementsByClassName('box')
 
-btn.addEventListener('dblclick', function () {
-    boxElem[0].remove()
-})
+// btn.addEventListener('dblclick', function () {
+//     boxElem[0].remove()
+// })
 
 // let passwordElem = $.getElementById('password-field')
 
@@ -195,3 +195,16 @@ window.onload = function () {
         $.body.classList.add('dark')
     }
 }
+
+const addAnimationBtn = $.querySelector('.box')
+const boxElem = $.querySelector('.box')
+
+function setAnimation() {
+    boxElem.style.animation = 'move 1s 1'
+}
+function animationEndHandler() {
+    boxElem.remove()
+}
+
+addAnimationBtn.addEventListener('click', setAnimation)
+boxElem.addEventListener('animationend', animationEndHandler)

@@ -150,6 +150,7 @@ body {
   margin-right: -6px;
   border: #0000000f solid;
   border-width: 1px 1px 1px 0px;
+  position: relative;
 }
 .lomp{
   width: 10px;
@@ -411,4 +412,8 @@ header {
     box-shadow: 0px 0px 20px 20px rgba(255, 255, 0, 0);
     background-color: rgba(255, 255, 0, 0);
     transition: 0.3s;
+}
+@keyframes move {
+  from {top: 1px;}
+  to {top: 300px;}
 }

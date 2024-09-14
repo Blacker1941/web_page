@@ -169,6 +169,7 @@ box{
     border-radius: 5%;
     border: 1px solid #000000;
 }
+
 @media (max-width: 1010px) {
     .divBox {
         margin-left: 37%;
@@ -390,7 +391,7 @@ header {
     border-radius: 20px;
     background-color: rgb(12 12 12);
     position: relative;
-    border: 1px solid #00fbac ;
+    border: 1px solid white ;
     transition: 0.3s;
 }
 
@@ -467,4 +468,92 @@ header {
 }
 .dark p {
     color: #ecf0f1;
+}
+.dark .switch {
+    border: 1px solid #00fbac ;
+    transition: 0.3s;
+}
+.mbi{
+    margin-left: 1%;
+    position: absolute;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 4px;
+    width: 7px;
+    text-align: center;
+    height: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.mbiImg{
+    background-image: url(../image/Free-BMI-Calculator-Blog-Cover.jpg);
+    width: 75%;
+    height: 75%;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+@keyframes move {
+    from {top: -100px;}
+    to {top: 100px;}
+  }
+@keyframes moveend {
+    from {top: 100px;}
+    to {top: -100px;}
+  }
+
+.X{
+    position: absolute;
+    right: 3%;
+    font-size: 15px;
+    cursor: pointer;
+}
+.MBIa{
+    color: black;
+    text-decoration: unset;
+    transition: 0.3s;
+}
+@media (max-width: 3000px) {
+    .mbi{
+        width: 100px;
+        height: 85px;
+    }
+    .mbiImg{
+        width: 75%;
+        height: 62%;
+    }
+}
+@media (max-width: 1500px) {
+    .mbi{
+        width: 100px;
+        height: 85px;
+    }
+    .mbiImg{
+        width: 75%;
+        height: 62%;
+    }
+}
+@media (max-width: 450px) {
+    .mbi{
+        width: 58px;
+        height: 54px;
+        font-size: 7px;
+    }
+    .mbiImg{
+        width: 75%;
+        height: 60%;
+    }
+    .X{
+        font-size: 9px;
+    }
+}
+.dark .mbi{
+    background-color: black;
+    color: #00fbac;
+    border: 1px solid #00fbac;
+    transition: 0.3s;
+}
+.dark .MBIa{
+    color: #00fbac;
+    transition: 0.3s;
 }

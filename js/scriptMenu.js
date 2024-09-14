@@ -262,15 +262,15 @@ switchElement.addEventListener('click', function () {
     $.body.classList.toggle('dark')
 
     if (document.body.className.includes('dark')) {
-        localStorage.setItem('themeMenu', 'dark')
+        localStorage.setItem('theme', 'dark')
     } else {
-        localStorage.setItem('themeMenu', 'light')
+        localStorage.setItem('theme', 'light')
     }
 })
 
 
 window.onload = function () {
-    let localStorageTheme = localStorage.getItem('themeMenu')
+    let localStorageTheme = localStorage.getItem('theme')
 
     if (localStorageTheme === 'dark') {
         $.body.classList.add('dark')
@@ -278,3 +278,20 @@ window.onload = function () {
       $.body.classList.remove('dark')
     }
 }
+const mbiElem = $.querySelector('.mbi')
+const XElem = $.querySelector('.X')
+const DElem = $.querySelector('.d')
+
+function setAnimation() {
+  mbiElem.style.animation = 'move 1s 1'
+}
+function animationXHandler() {
+  mbiElem.style.animation = 'moveend 1s 1'
+  mbiElem.addEventListener("animationend", animationEndHandler);
+}
+function animationEndHandler() {
+  mbiElem.remove()
+}
+
+window.addEventListener('load', setAnimation)
+XElem.addEventListener('click', animationXHandler)
