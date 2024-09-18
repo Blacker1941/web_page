@@ -12,7 +12,7 @@ input.addEventListener("input", () => {
 (function () {
     'use strict';
     window.addEventListener('load', function () {
-      var canvas = document.getElementById('canvas');
+      var canvas = $.getElementById('canvas');
 
       if (!canvas || !canvas.getContext) {
         return false;
@@ -256,12 +256,12 @@ $.body.addEventListener('contextmenu', contextHandler)
 $.body.addEventListener('click', clickConTextMenu)
 $.body.addEventListener('keydown', keyDownHandler)
 
-const switchElement = document.querySelector('.switch')
+const switchElement = $.querySelector('.switch')
 
 switchElement.addEventListener('click', function () {
     $.body.classList.toggle('dark')
 
-    if (document.body.className.includes('dark')) {
+    if ($.body.className.includes('dark')) {
         localStorage.setItem('theme', 'dark')
     } else {
         localStorage.setItem('theme', 'light')
@@ -295,3 +295,55 @@ function animationEndHandler() {
 
 window.addEventListener('load', setAnimation)
 XElem.addEventListener('click', animationXHandler)
+
+const button = $.querySelector('.profile')
+const modalParent = $.querySelector('.modal-parent')
+const x = $.querySelector('.XProfile')
+
+
+function showModal () {
+  modalParent.className = 'modal-parent1'
+  modalParent.style.animation = 'moveProfile 1s 1'
+}
+
+function hideModalWithX () {
+  modalParent.style.animation = 'moveendProfile 1s 1'
+  modalParent.addEventListener("animationend", animationEndHandlerProfile);
+
+}
+function animationEndHandlerProfile() {
+  modalParent.className = 'modal-parent'
+
+}
+button.addEventListener('click', showModal)
+x.addEventListener('click', hideModalWithX)
+
+
+const colorBtns = $.querySelectorAll('.btn')
+
+colorBtns.forEach(function (colorBtn) {
+
+  colorBtn.addEventListener('click', function (event) {
+    let btnColor = event.target.dataset.color
+
+    $.documentElement.style.setProperty('--theme-color', btnColor)
+    localStorage.setItem('color', btnColor)
+  })
+})
+window.onload = function () {
+  let localStorageColor = localStorage.getItem('color')
+
+  if (localStorageColor === '#3498db') {
+    $.documentElement.style.setProperty('--theme-color', '#3498db')
+  } else if (localStorageColor === '#ff1756') {
+    $.documentElement.style.setProperty('--theme-color', '#ff1756')
+  } else if (localStorageColor === '#ff1756') {
+    $.documentElement.style.setProperty('--theme-color', '#ff1756')
+  } else if (localStorageColor === '#1cb65d') {
+    $.documentElement.style.setProperty('--theme-color', '#1cb65d')
+  } else if (localStorageColor === '#8e44ad') {
+    $.documentElement.style.setProperty('--theme-color', '#8e44ad')
+  } else if (localStorageColor === '#f4b932') {
+    $.documentElement.style.setProperty('--theme-color', '#f4b932')
+  }
+}

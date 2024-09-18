@@ -1,5 +1,6 @@
+
 nav {
-	margin: 27px auto 0;
+	margin: 7% auto 0;
     position: relative;
     width: 590px;
     height: 50px;
@@ -80,14 +81,16 @@ body {
 	background: #2c3e50;
 }
 h1 {
-	text-align: center;
-    margin: 40px 0 40px;
+    margin: 0px 0 40px;
     text-align: center;
     font-size: 30px;
     color: #ecf0f1;
     text-shadow: 2px 2px 4px #000000;
     font-family: 'Cherry Swash', cursive;
     color: #00fbac;
+    position: absolute;
+    left: 40%;
+    right: 40%;
 }
 
 p {
@@ -143,7 +146,7 @@ box{
 	height: 200px;
     width: 200px;
     border: 1px solid #333;
-    transition: all 0.4s ease;
+    transition: all 0.3s ease;
     display: block;
     background: wheat;
     border-radius: 5px;
@@ -173,6 +176,12 @@ box{
 @media (max-width: 1010px) {
     .divBox {
         margin-left: 37%;
+        margin-top: 1%;
+    }
+}
+@media (max-width: 845px) {
+    h1{
+        font-size: 24px;
     }
 }
 @media (max-width: 700px) {
@@ -184,12 +193,15 @@ box{
     .divBox {
         margin-left: 30%;
     }
+    h1{
+        font-size: 20px;
+        margin-top: 1%;
+    }
     nav {
-        margin: 27px auto 0;
+        margin: 15% auto 0;
         position: relative;
         width: 300px;
         height: 50px;
-        background-color: #000000;
         border-radius: 8px;
         font-size: 0;
         border: 1px #00fbac solid;
@@ -256,13 +268,21 @@ box{
     .divBox {
         margin-left: 27%;
     }
+    h1 {
+        font-size: 18px;
+        margin-top: 2%;
+    }
 }
 @media (max-width: 520px) {
     .divBox {
         margin-left: 24%;
     }
+    h1{
+        font-size: 17px;
+        margin-top: 3%;
+    }
 }
-@media (max-width: 450px) {
+@media (max-width: 460px) {
     .divBox {
         margin-left: 24%;
     }
@@ -278,7 +298,7 @@ box{
         height: 150px;
         width: 118px;
         border: 1px solid #333;
-        transition: all 0.4s ease;
+        transition: all 0.3s ease;
         display: block;
         background: wheat;
         border-radius: 5px;
@@ -294,13 +314,21 @@ box{
         margin-top: 10%;
         font-size: 10px;
     }
+    h1{
+        font-size: 13px;
+        margin-top: 3%;
+    }
 }
-@media (max-width: 315px) {
+@media (max-width: 340px) {
     p{
         font-size: 111%;
     }
     ul#navigation {
         margin-right: -5%;
+    }
+    h1 {
+        font-size: 11px;
+        margin-top: 4%;
     }
 }
 @media (max-width: 273px) {
@@ -329,6 +357,7 @@ ul {
   .context-menu {
     position: absolute;
     box-shadow: 0px 0px 20px -5px black;
+    z-index: 2;
   }
   .menu {
     display: flex;
@@ -352,11 +381,11 @@ ul {
     text-decoration: unset;
     color: #000;
     font-weight: 500;
-    transition: 0.5s linear;
-    -webkit-transition: 0.5s linear;
-    -moz-transition: 0.5s linear;
-    -ms-transition: 0.5s linear;
-    -o-transition: 0.5s linear;
+    transition: 0.3s linear;
+    -webkit-transition: 0.3s linear;
+    -moz-transition: 0.3s linear;
+    -ms-transition: 0.3s linear;
+    -o-transition: 0.3s linear;
   }
   .menu > li > a:hover {
     background:#f1f3f7;
@@ -383,6 +412,7 @@ header {
   justify-content: flex-end;
   padding: 30px;
   padding-right: 4%;
+  padding-top: 4px;
 }
 
 .switch {
@@ -393,6 +423,7 @@ header {
     position: relative;
     border: 1px solid white ;
     transition: 0.3s;
+    cursor: pointer;
 }
 
 .flicker {
@@ -485,6 +516,8 @@ header {
     height: 10px;
     cursor: pointer;
     transition: 0.3s;
+    top: 160px;
+    font-size: 13px;
 }
 .mbiImg{
     background-image: url(../image/Free-BMI-Calculator-Blog-Cover.jpg);
@@ -495,10 +528,10 @@ header {
 }
 @keyframes move {
     from {top: -100px;}
-    to {top: 100px;}
+    to {top: 160px;}
   }
 @keyframes moveend {
-    from {top: 100px;}
+    from {top: 160px;}
     to {top: -100px;}
   }
 
@@ -556,4 +589,285 @@ header {
 .dark .MBIa{
     color: #00fbac;
     transition: 0.3s;
+}
+#mainNav {
+	display: flex;
+	justify-content: flex-end;
+	padding:  0px 16px;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	background-color: #eee;
+	transition: background 0.3s;
+    margin-top: 0px;
+    border: 0px;
+    border-bottom: 1px solid black;
+    border-radius: 0px;
+}
+
+section {
+	height: 300px;
+	font-size: 20px;
+}
+
+section:nth-of-type(1) {
+	margin-top: 84px;
+}
+.dark #mainNav {
+    background-color: black;
+    transition: 0.3s;
+    border: 0px;
+    border-bottom: 1px solid #00fbac;
+}
+.headerProfile{
+    left: 0px;
+    position: absolute;
+}
+.profile{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: white;
+    position: relative;
+    border: 1px solid black;
+    transition: 0.3s;
+    cursor: pointer;
+
+}
+.border{
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgb(0 0 0);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transition: 0.3s;
+    box-shadow: inset 4px 4px 4px rgb(55 52 52), inset -4px -4px 4px rgb(68 67 69 / 90%);
+}
+.headProfile{
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+    box-shadow: inset 0px 0px 4px 0px black;
+    position: absolute;
+    top: 8px;
+    left: 12.5px;
+    background-color: #ffffff;
+    transition: 0.3s;
+}
+.bodyProfile{
+    width: 20px;
+    height: 14px;
+    box-shadow: inset 0px 0px 5px 0px black;
+    position: absolute;
+    top: 21px;
+    left: 10px;
+    background-color: white;
+    transition: 0.3s;
+    border-radius: 8px 8px 17px 16px;
+}
+.dark .profile{
+    background-color: rgb(12 12 12);
+    border: 1px solid #00fbac;
+    transition: 0.3s;
+}
+.dark .border{
+    background-color: rgb(255, 255, 255);
+    transition: 0.3s;
+    box-shadow: inset 4px 4px 4px rgb(255, 255, 255), inset -4px -4px 4px rgb(195 193 198 / 90%);
+}
+.dark .headProfile{
+    box-shadow: inset 0px 0px 11px 0px white;
+    background-color: #000000;
+    transition: 0.3s;
+}
+.dark .bodyProfile {
+    box-shadow: inset 0px 0px 11px 0px white;
+    background-color: black;
+    transition: 0.3s;
+}
+:root{
+    --theme-color: #ff1756;
+}
+body{
+    background-color: #fafafa;
+}
+.container{
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 53%;
+    left: 54%;
+    border-radius: 6px;
+    font-family: arial;
+    position: relative;
+    animation: 0.5s drop;
+    transition: 0.3;
+}
+.card{
+    height: 420px;
+    width: 320px;
+    background: linear-gradient(
+        to bottom,
+        var(--theme-color) 110px,
+        #ffffff 110px
+    );
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(50,50,50,0.1);
+    padding: 50px 0;
+    transition: 0.3;
+    border: 1px solid #000000;
+}
+.card *{
+    font-family: 'Poppins',sans-serif;
+    text-align: center;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+}
+.ImgPr{
+    display: block;
+    width: 100px;
+    height: 100px;
+    position: relative;
+    border-radius: 50%;
+    margin: 0 auto;
+    box-shadow: 0 0 0 8px #ffffff;
+    transition: 0.3;
+}
+.card h4{
+    color: var(--theme-color);
+    font-size: 16px;
+    margin: 15px 0 5px 0;
+}
+.card h5{
+    color: #454545;
+    font-weight: 400;
+    font-size: 14px;
+    transition: 0.3;
+}
+.details{
+    width: 100%;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-around;
+}
+.details h2{
+    font-weight: 400;
+    transition: 0.3;
+}
+.details span{
+    color: var(--theme-color);
+    transition: 0.3;
+}
+.buttons{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+.buttons button{
+    width: 130px;
+    padding: 8px 0;
+    border-radius: 25px;
+    border: 3px solid var(--theme-color);
+}
+.buttons button:first-child{
+    background-color: var(--theme-color);
+    color: #ffffff;
+}
+.buttons button:last-child{
+    background-color: transparent;
+    color: var(--theme-color);
+}
+.themes{
+    background-color: #ffffff;
+    box-shadow: 0 5px 15px rgba(50,50,50,0.1);
+    padding: 20px;
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+    transition: 0.3;
+}
+.themes button{
+    height: 25px;
+    width: 25px;
+    border: 3px solid #dddddd;
+    outline: none;
+    border-radius: 50%;
+    cursor: pointer;
+}
+.btn1{
+    background-color: #3498db;
+}
+.btn2{
+    background-color: #ff1756;
+}
+.btn3{
+    background-color: #1cb65d;
+}
+.btn4{
+    background-color: #8e44ad;
+}
+.btn5{
+    background-color: #f4b932;
+}
+.modal-parent{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 52%;
+    width: 333px;
+    display: none;
+    z-index: 1;
+    margin-top: 50px;
+}
+section{
+transition: 0.3s;
+}
+.dark .card {
+    background: linear-gradient(to bottom, var(--theme-color) 110px, #000000 110px);
+    transition: 0.3;
+    border: 1px solid #00fbac;
+}
+.dark .details h2 {
+    color: white;
+    transition: 0.3;
+}
+.dark .card h5 {
+    color: white;
+    transition: 0.3;
+}
+.dark .themes {
+    background-color: #3b3b3b;
+    transition: 0.3;
+    z-index: 2;
+}
+.dark .ImgPr {
+    box-shadow: 0 0 0 8px #000000;
+    transition: 0.3;
+}
+.XProfile{
+    position: absolute;
+    right: 5%;
+    font-size: 30px;
+    cursor: pointer;
+
+}
+@keyframes moveProfile {
+    from {top: -700px;}
+    to {top: 0px;}
+  }
+@keyframes moveendProfile {
+    from {top: 0px;}
+    to {top: -700px;}
+  }
+.modal-parent1{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 52%;
+    width: 333px;
+    display: block;
+    z-index: 1;
+    margin-top: 50px;
 }

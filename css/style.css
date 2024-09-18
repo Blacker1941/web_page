@@ -384,11 +384,6 @@ header {
   transform: translateX(40px);
   transition: 0.3s;
 }
-
-.dark > * {
-  color: rgb(255, 255, 255);
-}
-
 .fa{
   color: black;
 }
