@@ -9,6 +9,7 @@ nav {
     font-size: 0;
     border: 1px black solid;
     transition: 0.3s;
+    z-index: 2;
 
 }
 nav a {
@@ -357,7 +358,7 @@ ul {
   .context-menu {
     position: absolute;
     box-shadow: 0px 0px 20px -5px black;
-    z-index: 2;
+    z-index: 3;
   }
   .menu {
     display: flex;
@@ -868,6 +869,6 @@ transition: 0.3s;
     height: 52%;
     width: 333px;
     display: block;
-    z-index: 1;
+    z-index: 3;
     margin-top: 50px;
 }
