@@ -309,10 +309,10 @@ function showModal () {
 function hideModalWithX () {
   modalParent.style.animation = 'moveendProfile 1s 1'
   modalParent.addEventListener("animationend", animationEndHandlerProfile);
-
 }
 function animationEndHandlerProfile() {
   modalParent.className = 'modal-parent'
+  modalParent.removeEventListener('animationend', animationEndHandlerProfile)
 
 }
 button.addEventListener('click', showModal)
