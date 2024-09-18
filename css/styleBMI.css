@@ -137,9 +137,17 @@ header {
     left: 13px;
     background-color: yellow;
     transition: 0.3s;
+    opacity: 1;
 }
 .sun{
+    opacity: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
     box-shadow: 0px 0px 20px 20px rgba(255, 255, 0, 0);
-    background-color: rgba(255, 255, 0, 0);
+    position: absolute;
+    top: 10px;
+    left: 13px;
+    background-color: yellow;
     transition: 0.3s;
 }
