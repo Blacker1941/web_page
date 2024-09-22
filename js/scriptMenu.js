@@ -269,15 +269,7 @@ switchElement.addEventListener('click', function () {
 })
 
 
-window.onload = function () {
-    let localStorageTheme = localStorage.getItem('theme')
 
-    if (localStorageTheme === 'dark') {
-        $.body.classList.add('dark')
-    } else {
-      $.body.classList.remove('dark')
-    }
-}
 const mbiElem = $.querySelector('.mbi')
 const XElem = $.querySelector('.X')
 const DElem = $.querySelector('.d')
@@ -346,4 +338,50 @@ window.onload = function () {
   } else if (localStorageColor === '#f4b932') {
     $.documentElement.style.setProperty('--theme-color', '#f4b932')
   }
+  let localStorageTheme = localStorage.getItem('theme')
+
+  if (localStorageTheme === 'dark') {
+      $.body.classList.add('dark')
+  } else {
+    $.body.classList.remove('dark')
+  }
+
 }
+
+const MainNav = $.getElementById('mainNav')
+const blackerElem = $.querySelector('.h1Blacker')
+const scrollElem = $.querySelector('.scroll')
+
+$.addEventListener('scroll', function () {
+  if (document.documentElement.scrollTop > 0) {
+    MainNav.style.height = '0px'
+    button.style.display = 'none'
+    blackerElem.style.display = 'none'
+    switchElement.style.display = 'none'
+    scrollElem.style.display = 'block'
+  } else {
+    MainNav.style.height = '50px'
+    button.style.display = 'block'
+    blackerElem.style.display = 'block'
+    switchElement.style.display = 'block'
+    scrollElem.style.display = 'none'
+  }
+})
+
+let customScroll = $.querySelector('.scroll')
+
+window.addEventListener('scroll', function () {
+
+  let scrollTop = window.scrollY
+
+  let documentHeight = document.body.clientHeight
+
+  let windowHeight = window.innerHeight
+
+  let scrollPercent = scrollTop / (documentHeight - windowHeight)
+
+  let scrollPercentRounded = Math.round(scrollPercent * 100)
+
+  customScroll.style.width = scrollPercentRounded + '%'
+
+})

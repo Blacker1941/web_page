@@ -79,7 +79,8 @@ nav .start-contact, a:nth-child(5):hover~.animation {
 body {
 	font-size: 12px;
 	font-family: sans-serif;
-	background: #2c3e50;
+    padding-top: 1px;
+    padding-bottom: 1000%;
 }
 h1 {
     margin: 0px 0 40px;
@@ -699,9 +700,6 @@ section:nth-of-type(1) {
 :root{
     --theme-color: #ff1756;
 }
-body{
-    background-color: #fafafa;
-}
 .container{
     position: absolute;
     transform: translate(-50%, -50%);
@@ -879,4 +877,20 @@ transition: 0.3s;
     display: block;
     z-index: 3;
     margin-top: 50px;
+}
+.scroll {
+    height: 3px;
+    display: none;
+    position: fixed;
+    background-color: #107abe;
+    top: 0px;
+    box-shadow: 0px 0px 20px 10px #107abe;
+}
+.dark .scroll {
+    background-color: #00fbac;
+    box-shadow: 0px 0px 20px 10px #00fbac;
+}
+.nothing {
+    height: 10000px;
+    width: 1px;
 }
