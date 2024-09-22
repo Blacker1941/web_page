@@ -891,7 +891,4 @@ transition: 0.3s;
     background-color: #00fbac;
     box-shadow: 0px 0px 20px 10px #00fbac;
 }
-.nothing {
-    height: 10000px;
-    width: 1px;
-}
+
