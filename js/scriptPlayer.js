@@ -1,3 +1,5 @@
+"use strict"
+
 const image = document.querySelector("#cover");
 const title = document.getElementById("title");
 const artist = document.getElementById("artist");

@@ -1,4 +1,6 @@
-﻿let citiesData = {
+﻿"use strict"
+
+let citiesData = {
     tehran: { city: 'Tehran ', temp: 12, weather: 'sunney', humidity: 23, windSpeed: 32},
     qom: { city: 'Qom ', temp: 50, weather: 'sunney', humidity: 1, windSpeed: 0},
     shiraz: { city: 'Shiraz ', temp: 16, weather: 'rainy', humidity: 40, windSpeed: 29},

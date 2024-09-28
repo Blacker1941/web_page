@@ -1,4 +1,6 @@
-﻿let $ = document
+﻿"use strict"
+
+let $ = document
 
 let countrySelectBox = document.querySelector('.countrySelect')
 let citySelect = document.querySelector('.citySelect')

@@ -1,3 +1,5 @@
+"use strict"
+
 let $ = document
 
 let box = $.querySelector("box"),

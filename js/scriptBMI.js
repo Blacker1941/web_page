@@ -1,3 +1,5 @@
+"use strict"
+
 let $ = document
 
 const switchElement = document.querySelector('.switch')
