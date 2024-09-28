@@ -44,7 +44,9 @@ function generateNewNote() {
 
 
 function removeNote(event) {
-    event.target.parentElement.remove()
+    if (event.target.tagName === 'SPAN') {
+        event.target.parentElement.remove()
+    }
 }
 
 btnDeleteElem.addEventListener('click', function () {
