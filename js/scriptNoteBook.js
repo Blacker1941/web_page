@@ -1,17 +1,17 @@
 "use strict"
 
 let $ = document
-let XXX = '×'
+let XXX = `×`
 
-const inputElem = $.querySelector('#input-field')
-const btnSaveElem = $.querySelector('#btn-save')
-const btnDeleteElem = $.querySelector('#btn-delete')
-const colorsBox = $.querySelectorAll('.color-box')
-const notesContainer = $.querySelector('#listed')
-const XElem = $.querySelector('.X')
+const inputElem = $.querySelector(`#input-field`)
+const btnSaveElem = $.querySelector(`#btn-save`)
+const btnDeleteElem = $.querySelector(`#btn-delete`)
+const colorsBox = $.querySelectorAll(`.color-box`)
+const notesContainer = $.querySelector(`#listed`)
+const XElem = $.querySelector(`.X`)
 
 colorsBox.forEach(function (colorBox) {
-    colorBox.addEventListener('click', function (event) {
+    colorBox.addEventListener(`click`, function (event) {
         let mainColor = event.target.style.backgroundColor
         inputElem.style.backgroundColor = mainColor
     })
@@ -19,70 +19,70 @@ colorsBox.forEach(function (colorBox) {
 
 function generateNewNote() {
     if (inputElem.value) {
-        let newNoteDivElem = $.createElement('div')
-        newNoteDivElem.className = 'card shadow-sm rounded'
+        let newNoteDivElem = $.createElement(`div`)
+        newNoteDivElem.className = `card shadow-sm rounded`
         let inputBg = inputElem.style.backgroundColor
         newNoteDivElem.style.backgroundColor = inputBg
 
 
-        let newNotePElem = $.createElement('p')
-        newNotePElem.className = 'card-text p-3'
+        let newNotePElem = $.createElement(`p`)
+        newNotePElem.className = `card-text p-3`
         newNotePElem.innerHTML = inputElem.value
 
-        let newNoteSpanXElem = $.createElement('span')
-        newNoteSpanXElem.className = 'X'
+        let newNoteSpanXElem = $.createElement(`span`)
+        newNoteSpanXElem.className = `X`
         newNoteSpanXElem.innerHTML = XXX
-        newNoteSpanXElem.addEventListener('click', removeNote)
+        newNoteSpanXElem.addEventListener(`click`, removeNote)
 
         newNoteDivElem.append(newNotePElem)
         newNoteDivElem.append(newNoteSpanXElem)
 
         notesContainer.append(newNoteDivElem)
 
-        inputElem.value = ''
-        inputElem.style.backgroundColor = '#fff'
+        inputElem.value = ``
+        inputElem.style.backgroundColor = `#fff`
     }
 }
 
 
 function removeNote(event) {
-    if (event.target.tagName === 'SPAN') {
+    if (event.target.tagName === `SPAN`) {
         event.target.parentElement.remove()
     }
 }
 
-btnDeleteElem.addEventListener('click', function () {
-    inputElem.value = ''
-    inputElem.style.backgroundColor = '#fff'
+btnDeleteElem.addEventListener(`click`, function () {
+    inputElem.value = ``
+    inputElem.style.backgroundColor = `#fff`
 })
 
-inputElem.addEventListener('keydown', function (event) {
+inputElem.addEventListener(`keydown`, function (event) {
     if (event.keyCode === 13) {
         generateNewNote()
     }
 })
 
-btnSaveElem.addEventListener('click', generateNewNote)
+btnSaveElem.addEventListener(`click`, generateNewNote)
 
-const switchElement = document.querySelector('.switch')
+const switchElement = document.querySelector(`.switch`)
 
-switchElement.addEventListener('click', function () {
-    $.body.classList.toggle('dark')
+switchElement.addEventListener(`click`, function () {
+    $.body.classList.toggle(`dark`)
 
-    if (document.body.className.includes('dark')) {
-        localStorage.setItem('theme', 'dark')
+    if (document.body.className.includes(`dark`)) {
+        localStorage.setItem(`theme`, `dark`)
     } else {
-        localStorage.setItem('theme', 'light')
+        localStorage.setItem(`theme`, `light`)
     }
 })
 
 
 window.onload = function () {
-    let localStorageTheme = localStorage.getItem('theme')
+    let localStorageTheme = localStorage.getItem(`theme`)
 
-    if (localStorageTheme === 'dark') {
-        $.body.classList.add('dark')
+    if (localStorageTheme === `dark`) {
+        $.body.classList.add(`dark`)
     } else {
-      $.body.classList.remove('dark')
+      $.body.classList.remove(`dark`)
     }
 }

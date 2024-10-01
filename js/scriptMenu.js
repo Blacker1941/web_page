@@ -12,9 +12,9 @@ input.addEventListener("input", () => {
 
 
 (function () {
-    'use strict';
-    window.addEventListener('load', function () {
-      var canvas = $.getElementById('canvas');
+    `use strict`;
+    window.addEventListener(`load`, function () {
+      var canvas = $.getElementById(`canvas`);
 
       if (!canvas || !canvas.getContext) {
         return false;
@@ -32,7 +32,7 @@ input.addEventListener("input", () => {
         Var
       ********************/
 
-      var ctx = canvas.getContext('2d');
+      var ctx = canvas.getContext(`2d`);
       var X = canvas.width = window.innerWidth;
       var Y = canvas.height = window.innerHeight;
       var mouseX = null;
@@ -94,7 +94,7 @@ input.addEventListener("input", () => {
       Shape.prototype.draw = function() {
         var ctx  = this.ctx;
         ctx.save();
-        ctx.fillStyle = 'hsl(' + this.c + ', ' + '80%, 60%)';
+        ctx.fillStyle = `hsl(` + this.c + `, ` + `80%, 60%)`;
         ctx.beginPath();
         ctx.arc(this.x, this.y, this.r, 0, Math.PI * 2, false);
         ctx.fill();
@@ -138,7 +138,7 @@ input.addEventListener("input", () => {
             if (dist <= lessThan) {
               ctx.save();
               ctx.lineWidth = lineWidth;
-              ctx.strokeStyle = 'hsl(' + this.c + ', ' + '80%, 60%)';
+              ctx.strokeStyle = `hsl(` + this.c + `, ` + `80%, 60%)`;
               ctx.beginPath();
               ctx.moveTo(this.x, this.y);
               ctx.lineTo(shapes[i].x, shapes[i].y);
@@ -207,16 +207,16 @@ input.addEventListener("input", () => {
         }
       }
 
-      window.addEventListener('resize', function() {
+      window.addEventListener(`resize`, function() {
         onResize();
       });
 
-      window.addEventListener('mousemove', function(e) {
+      window.addEventListener(`mousemove`, function(e) {
         mouseX = e.clientX;
         mouseY = e.clientY;
       }, false);
 
-      canvas.addEventListener('touchmove', function(e) {
+      canvas.addEventListener(`touchmove`, function(e) {
         var touch = e.targetTouches[0];
         mouseX = touch.pageX;
         mouseY = touch.pageY;
@@ -224,155 +224,152 @@ input.addEventListener("input", () => {
 
     });
     // Author
-    console.log('File Name / scriptMenu.js\nCreated Date / August 19, 2024\nAuthor / Blacker ');
+    console.log(`File Name / scriptMenu.js\nCreated Date / August 19, 2024\nAuthor / Blacker `);
 })();
 
-const contextMenu = $.getElementById('contextMenu')
+const contextMenu = $.getElementById(`contextMenu`)
 
 
 function contextHandler(event) {
   event.preventDefault()
 
-  if (contextMenu.style.display === 'none') {
+  if (contextMenu.style.display === `none`) {
 
-    contextMenu.style.left = event.pageX + 'px'
-    contextMenu.style.top = event.pageY + 'px'
+    contextMenu.style.left = event.pageX + `px`
+    contextMenu.style.top = event.pageY + `px`
 
-    contextMenu.style.display = 'block'
+    contextMenu.style.display = `block`
   } else {
-    contextMenu.style.left = event.pageX + 'px'
-    contextMenu.style.top = event.pageY + 'px'
+    contextMenu.style.left = event.pageX + `px`
+    contextMenu.style.top = event.pageY + `px`
   }
 }
 
 function clickConTextMenu() {
-  contextMenu.style.display = 'none'
+  contextMenu.style.display = `none`
 }
 
 function keyDownHandler(event) {
   if (event.keyCode === 27)
-    contextMenu.style.display = 'none'
+    contextMenu.style.display = `none`
 }
 
-$.body.addEventListener('contextmenu', contextHandler)
-$.body.addEventListener('click', clickConTextMenu)
-$.body.addEventListener('keydown', keyDownHandler)
+$.body.addEventListener(`contextmenu`, contextHandler)
+$.body.addEventListener(`click`, clickConTextMenu)
+$.body.addEventListener(`keydown`, keyDownHandler)
 
-const switchElement = $.querySelector('.switch')
+const switchElement = $.querySelector(`.switch`)
 
-switchElement.addEventListener('click', function () {
-    $.body.classList.toggle('dark')
+switchElement.addEventListener(`click`, function () {
+    $.body.classList.toggle(`dark`)
 
-    if ($.body.className.includes('dark')) {
-        localStorage.setItem('theme', 'dark')
+    if ($.body.className.includes(`dark`)) {
+        localStorage.setItem(`theme`, `dark`)
     } else {
-        localStorage.setItem('theme', 'light')
+        localStorage.setItem(`theme`, `light`)
     }
 })
 
 
 
-const mbiElem = $.querySelector('.mbi')
-const XElem = $.querySelector('.X')
-const DElem = $.querySelector('.d')
+const mbiElem = $.querySelector(`.mbi`)
+const XElem = $.querySelector(`.X`)
+const DElem = $.querySelector(`.d`)
 
 function setAnimation() {
-  mbiElem.style.animation = 'move 1s 1'
+  mbiElem.style.animation = `move 1s 1`
 }
 function animationXHandler() {
-  mbiElem.style.animation = 'moveend 1s 1'
-  mbiElem.addEventListener("animationend", animationEndHandler);
-}
-function animationEndHandler() {
-  mbiElem.remove()
+  mbiElem.style.animation = `moveend 1s 1`
+  mbiElem.addEventListener("animationend", e => e.target.remove());
 }
 
-window.addEventListener('load', setAnimation)
-XElem.addEventListener('click', animationXHandler)
+window.addEventListener(`load`, setAnimation)
+XElem.addEventListener(`click`, animationXHandler)
 
-const button = $.querySelector('.profile')
-const modalParent = $.querySelector('.modal-parent')
-const x = $.querySelector('.XProfile')
+const button = $.querySelector(`.profile`)
+const modalParent = $.querySelector(`.modal-parent`)
+const x = $.querySelector(`.XProfile`)
 
 
 function showModal () {
-  modalParent.className = 'modal-parent1'
-  modalParent.style.animation = 'moveProfile 1s 1'
+  modalParent.className = `modal-parent1`
+  modalParent.style.animation = `moveProfile 1s 1`
 }
 
 function hideModalWithX () {
-  modalParent.style.animation = 'moveendProfile 1s 1'
+  modalParent.style.animation = `moveendProfile 1s 1`
   modalParent.addEventListener("animationend", animationEndHandlerProfile);
 }
 function animationEndHandlerProfile() {
-  modalParent.className = 'modal-parent'
-  modalParent.removeEventListener('animationend', animationEndHandlerProfile)
+  modalParent.className = `modal-parent`
+  modalParent.removeEventListener(`animationend`, animationEndHandlerProfile)
 
 }
-button.addEventListener('click', showModal)
-x.addEventListener('click', hideModalWithX)
+button.addEventListener(`click`, showModal)
+x.addEventListener(`click`, hideModalWithX)
 
 
-const colorBtns = $.querySelectorAll('.btn')
+const colorBtns = $.querySelectorAll(`.btn`)
 
 colorBtns.forEach(function (colorBtn) {
 
-  colorBtn.addEventListener('click', function (event) {
+  colorBtn.addEventListener(`click`, function (event) {
     let btnColor = event.target.dataset.color
 
-    $.documentElement.style.setProperty('--theme-color', btnColor)
-    localStorage.setItem('color', btnColor)
+    $.documentElement.style.setProperty(`--theme-color`, btnColor)
+    localStorage.setItem(`color`, btnColor)
   })
 })
 window.onload = function () {
-  let localStorageColor = localStorage.getItem('color')
+  let localStorageColor = localStorage.getItem(`color`)
 
-  if (localStorageColor === '#3498db') {
-    $.documentElement.style.setProperty('--theme-color', '#3498db')
-  } else if (localStorageColor === '#ff1756') {
-    $.documentElement.style.setProperty('--theme-color', '#ff1756')
-  } else if (localStorageColor === '#ff1756') {
-    $.documentElement.style.setProperty('--theme-color', '#ff1756')
-  } else if (localStorageColor === '#1cb65d') {
-    $.documentElement.style.setProperty('--theme-color', '#1cb65d')
-  } else if (localStorageColor === '#8e44ad') {
-    $.documentElement.style.setProperty('--theme-color', '#8e44ad')
-  } else if (localStorageColor === '#f4b932') {
-    $.documentElement.style.setProperty('--theme-color', '#f4b932')
+  if (localStorageColor === `#3498db`) {
+    $.documentElement.style.setProperty(`--theme-color`, `#3498db`)
+  } else if (localStorageColor === `#ff1756`) {
+    $.documentElement.style.setProperty(`--theme-color`, `#ff1756`)
+  } else if (localStorageColor === `#ff1756`) {
+    $.documentElement.style.setProperty(`--theme-color`, `#ff1756`)
+  } else if (localStorageColor === `#1cb65d`) {
+    $.documentElement.style.setProperty(`--theme-color`, `#1cb65d`)
+  } else if (localStorageColor === `#8e44ad`) {
+    $.documentElement.style.setProperty(`--theme-color`, `#8e44ad`)
+  } else if (localStorageColor === `#f4b932`) {
+    $.documentElement.style.setProperty(`--theme-color`, `#f4b932`)
   }
-  let localStorageTheme = localStorage.getItem('theme')
+  let localStorageTheme = localStorage.getItem(`theme`)
 
-  if (localStorageTheme === 'dark') {
-      $.body.classList.add('dark')
+  if (localStorageTheme === `dark`) {
+      $.body.classList.add(`dark`)
   } else {
-    $.body.classList.remove('dark')
+    $.body.classList.remove(`dark`)
   }
 
 }
 
-const MainNav = $.getElementById('mainNav')
-const blackerElem = $.querySelector('.h1Blacker')
-const scrollElem = $.querySelector('.scroll')
+const MainNav = $.getElementById(`mainNav`)
+const blackerElem = $.querySelector(`.h1Blacker`)
+const scrollElem = $.querySelector(`.scroll`)
 
-$.addEventListener('scroll', function () {
+$.addEventListener(`scroll`, function () {
   if (document.documentElement.scrollTop > 0) {
-    MainNav.style.height = '0px'
-    button.style.display = 'none'
-    blackerElem.style.display = 'none'
-    switchElement.style.display = 'none'
-    scrollElem.style.display = 'block'
+    MainNav.style.height = `0px`
+    button.style.display = `none`
+    blackerElem.style.display = `none`
+    switchElement.style.display = `none`
+    scrollElem.style.display = `block`
   } else {
-    MainNav.style.height = '50px'
-    button.style.display = 'block'
-    blackerElem.style.display = 'block'
-    switchElement.style.display = 'block'
-    scrollElem.style.display = 'none'
+    MainNav.style.height = `50px`
+    button.style.display = `block`
+    blackerElem.style.display = `block`
+    switchElement.style.display = `block`
+    scrollElem.style.display = `none`
   }
 })
 
-let customScroll = $.querySelector('.scroll')
+let customScroll = $.querySelector(`.scroll`)
 
-window.addEventListener('scroll', function () {
+window.addEventListener(`scroll`, function () {
 
   let scrollTop = window.scrollY
 
@@ -384,6 +381,6 @@ window.addEventListener('scroll', function () {
 
   let scrollPercentRounded = Math.round(scrollPercent * 100)
 
-  customScroll.style.width = scrollPercentRounded + '%'
+  customScroll.style.width = scrollPercentRounded + `%`
 
 })
