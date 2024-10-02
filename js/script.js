@@ -21,11 +21,27 @@ function dataValidation() {
         modal.style.background = `green`
         modal.innerHTML = `لاگین با موفقیت انجام شد`
         modal.style.display = `inline`
+        clearInputs()
     }
 
     setTimeout(function () {
         modal.style.display = `none`
     }, 3000)
+}
+passWordInput.addEventListener(`keydown`, function (event) {
+    if (event.keyCode === 13) {
+        dataValidation()
+    }
+})
+userNameInput.addEventListener(`keydown`, function (event) {
+    if (event.keyCode === 13) {
+        dataValidation()
+    }
+})
+
+function clearInputs() {
+    userNameInput.value = ``
+    passWordInput.value = ``
 }
 
 // let usernameMessage = document.querySelector(`.username-validation`)
@@ -163,11 +179,7 @@ function hideModalWithX () {
 }
 
 function hideModalWithEsc(event) {
-    if (event.keyCode === 32) {
-        modalParent.style.display = `none`
-        sectionElem.style.filter = `blur(0px)`
-    }
-    if (event.keyCode === 13) {
+    if (event.keyCode === 32 || event.keyCode === 13) {
         modalParent.style.display = `none`
         sectionElem.style.filter = `blur(0px)`
     }
