@@ -290,23 +290,36 @@ XElem.addEventListener(`click`, animationXHandler)
 const button = $.querySelector(`.profile`)
 const modalParent = $.querySelector(`.modal-parent`)
 const x = $.querySelector(`.XProfile`)
+let isModalOpen = false;
 
 
 function showModal () {
   modalParent.className = `modal-parent1`
   modalParent.style.animation = `moveProfile 1s 1`
+
 }
 
 function hideModalWithX () {
   modalParent.style.animation = `moveendProfile 1s 1`
   modalParent.addEventListener("animationend", animationEndHandlerProfile);
+
 }
 function animationEndHandlerProfile() {
   modalParent.className = `modal-parent`
   modalParent.removeEventListener(`animationend`, animationEndHandlerProfile)
 
 }
-button.addEventListener(`click`, showModal)
+
+function toggleModal() {
+  if (isModalOpen) {
+    hideModalWithX();
+  } else {
+    showModal();
+  }
+  isModalOpen = !isModalOpen;
+}
+
+button.addEventListener(`click`, toggleModal);
 x.addEventListener(`click`, hideModalWithX)
 
 
