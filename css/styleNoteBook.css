@@ -3,9 +3,9 @@
     --section-color: #616161;
     --white-color: #F8F8FF;
     --header-color: #444649;
-  }
+}
 
-  body {
+body {
     color: var(--white-color);
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
@@ -16,111 +16,110 @@
     overflow-x: hidden;
     background-color: white;
     transition: 0.3s;
-  }
+}
 
-  section {
+section {
     padding: 70px 0 70px 0;
     color: var(--section-color);
     line-height: 11pt;
-    position: relative;}
+    position: relative;
+}
 
-    section .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 10px;
-      width: 100%;
-      box-sizing: border-box; }
+section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
 
-    section .flex-50-gt-sm {
-      display: block;
-  }
+section .flex-50-gt-sm {
+    display: block;
+}
 
-  section:nth-of-type(2) {
+section:nth-of-type(2) {
     height: calc(78.3vh + 53px);
-  }
+}
 
-  .flex {
+.flex {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;}
+    align-items: center;
+}
 
-    .flex.wrap {
-      flex-wrap: wrap;}
+.flex.wrap {
+    flex-wrap: wrap;
+}
 
-    .flex.row {
-      flex-direction: row;
-  }
+.flex.row {
+    flex-direction: row;
+}
 
-  .header {
+.header {
     font-size: 25pt;
     position: relative;
     color: var(--header-color);
     position: relative;
-  }
+}
 
-  .header-bar {
+.header-bar {
     margin: 25px 0 60px 0;
     width: 70px;
     height: 4px;
     background: var(--header-color);
-  }
+}
 
-  .highlight {
+.highlight {
     color: var(--detail-color);
-  }
+}
 
-  .label {
+.label {
     font-size: 14pt;
     font-weight: 500;
-  }
+}
 
-  .upper {
+.upper {
     text-transform: uppercase;
     color: rebeccapurple;
-  }
+}
 
-  @media screen and (min-width: 290px){
+@media screen and (min-width: 290px) {
     .header {
-      font-size: 18pt;
+        font-size: 18pt;
     }
-  }
+}
 
-  @media screen and (min-width: 600px){
+@media screen and (min-width: 600px) {
     body {
-      font-size: 12pt;
+        font-size: 12pt;
     }
-
     section {
-      line-height: 18pt;
-      padding: 100px 0 130px 0;}
-
-      section .container {
-      padding: 0 10px;
+        line-height: 18pt;
+        padding: 100px 0 130px 0;
     }
-
+    section .container {
+        padding: 0 10px;
+    }
     .container {
-      padding: 0 20px;
+        padding: 0 20px;
     }
-
     .header {
-      font-size: 30pt;
+        font-size: 30pt;
     }
-
     .header-bar {
-      margin: 25px 0 50px 0;
+        margin: 25px 0 50px 0;
     }
-
     .label {
-      font-size: 18pt;
+        font-size: 18pt;
     }
-  }
+}
 
-  @media screen and (min-width: 960px){
+@media screen and (min-width: 960px) {
     .flex.row-gt-sm {
-      flex-direction: row;}
-
-      .flex-50-gt-sm {
+        flex-direction: row;
+    }
+    .flex-50-gt-sm {
         -webkit-flex: 1 1 50%;
         -ms-flex: 1 1 50%;
         flex: 1 1 50%;
@@ -128,57 +127,62 @@
         max-height: 100%;
         box-sizing: border-box;
     }
-  }
+}
 
-  /* ITEM */
 
-  .within-list {
+/* ITEM */
+
+.within-list {
     cursor: pointer;
-  }
+}
 
-  .card-columns {
+.card-columns {
     @include media-breakpoint-only(lg) {
-      column-count: 4;
+        column-count: 4;
     }
     @include media-breakpoint-only(xl) {
-      column-count: 5;
+        column-count: 5;
     }
-  }
+}
 
-  #listed:nth-child(odd):hover {
+#listed:nth-child(odd):hover {
     cursor: auto;
-  }
+}
 
-  /* FIXED LIST OF COLORS */
-  #color-select {
+
+/* FIXED LIST OF COLORS */
+
+#color-select {
     display: flex;
     padding: 5px 10px 0 0;
-  }
+}
 
-  .color-box {
+.color-box {
     border: solid 1px #929292;
     border-radius: 50%;
     height: 18px;
     width: 18px;
     margin-left: 5px;
-  }
-.X{
+}
+
+.X {
     position: absolute;
     left: 95%;
     top: 0%;
     font-size: 150%;
     cursor: pointer;
 }
-.color-box{
+
+.color-box {
     cursor: pointer;
 }
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 header {
-  display: flex;
-  justify-content: flex-end;
-  padding: 30px;
-  padding-right: 4%;
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px;
+    padding-right: 4%;
 }
 
 .switch {
@@ -192,37 +196,38 @@ header {
 }
 
 .flicker {
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
-  background-color: rgb(255, 255, 255);
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  transition: 0.3s;
-  box-shadow: inset 4px 4px 4px rgb(255, 255, 255),
-    inset -4px -4px 4px rgb(195 193 198 / 90%);
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transition: 0.3s;
+    box-shadow: inset 4px 4px 4px rgb(255, 255, 255), inset -4px -4px 4px rgb(195 193 198 / 90%);
 }
 
 .moon {
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  box-shadow: 4px 4px 0 0 rgb(255, 255, 255);
-  position: absolute;
-  top: 5px;
-  left: 45px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 0 0 rgb(255, 255, 255);
+    position: absolute;
+    top: 5px;
+    left: 45px;
 }
 
 .dark .flicker {
-  transform: translateX(40px);
-  transition: 0.3s;
+    transform: translateX(40px);
+    transition: 0.3s;
 }
-.dark .switch{
-  transition: 0.3s;
+
+.dark .switch {
+    transition: 0.3s;
 }
-.dark .sun{
-  width: 20px;
+
+.dark .sun {
+    width: 20px;
     height: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 20px 20px yellow;
@@ -233,7 +238,8 @@ header {
     transition: 0.3s;
     opacity: 1;
 }
-.sun{
+
+.sun {
     opacity: 0;
     width: 20px;
     height: 20px;
@@ -245,12 +251,14 @@ header {
     background-color: yellow;
     transition: 0.3s;
 }
-.dark{
-  background-color: black;
-  transition: 0.3s;
+
+.dark {
+    background-color: black;
+    transition: 0.3s;
 }
-.dark .switch{
-  background-color: rgb(12 12 12);
-  border: 1px solid white ;
-  transition: 0.3s;
+
+.dark .switch {
+    background-color: rgb(12 12 12);
+    border: 1px solid white;
+    transition: 0.3s;
 }

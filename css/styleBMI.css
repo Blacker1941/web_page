@@ -1,40 +1,41 @@
 *,
 *:before,
-*:after{
+*:after {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
     height: 100vh;
-    background: linear-gradient(
-        135deg,
-        #61d954,
-        #2ebf75
-    );
+    background: linear-gradient( 135deg, #61d954, #2ebf75);
 }
-.container{
+
+.container {
     background-color: #ffffff;
     padding: 40px 30px;
     width: 50%;
     min-width: 400px;
     position: absolute;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
     border-radius: 5px;
-    font-family: 'Poppins',sans-serif;
-    box-shadow: 25px 25px 30px rgba(0,0,0,0.15);
+    font-family: 'Poppins', sans-serif;
+    box-shadow: 25px 25px 30px rgba(0, 0, 0, 0.15);
 }
-.row{
+
+.row {
     display: flex;
     align-items: center;
     margin-bottom: 40px;
 }
-.row span{
+
+.row span {
     font-weight: 500;
 }
-input[type="range"]{
+
+input[type="range"] {
     width: 85%;
     height: 3.5px;
     -webkit-appearance: none;
@@ -44,7 +45,8 @@ input[type="range"]{
     outline: none;
     margin-right: 6%;
 }
-input[type="range"]::-webkit-slider-thumb{
+
+input[type="range"]::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     height: 15px;
@@ -53,82 +55,86 @@ input[type="range"]::-webkit-slider-thumb{
     border-radius: 50%;
     cursor: pointer;
 }
-#result{
+
+#result {
     font-size: 30px;
     font-weight: 700;
     letter-spacing: 1px;
     text-align: center;
     color: #0be881;
 }
-#category{
+
+#category {
     font-size: 18px;
     text-align: center;
     letter-spacing: 1px;
 }
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 .dark a {
-  color: rgb(246, 169, 241);
+    color: rgb(246, 169, 241);
 }
 
 header {
-  display: flex;
-  justify-content: flex-end;
-  padding: 30px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px;
 }
 
 .switch {
-  width: 80px;
-  height: 40px;
-  border-radius: 20px;
-  background-color: rgb(12 12 12 / 11%);
-  position: relative;
-  border: 1px solid #00000040;
-  transition: 0.3s;
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(12 12 12 / 11%);
+    position: relative;
+    border: 1px solid #00000040;
+    transition: 0.3s;
 }
 
 .flicker {
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
-  background-color: rgb(255, 255, 255);
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  transition: 0.3s;
-  box-shadow: inset 4px 4px 4px rgb(255, 255, 255),
-    inset -4px -4px 4px rgb(195 193 198 / 90%);
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transition: 0.3s;
+    box-shadow: inset 4px 4px 4px rgb(255, 255, 255), inset -4px -4px 4px rgb(195 193 198 / 90%);
 }
 
 .dark {
-  background: linear-gradient(135deg, #367d2e, #1c6b42);
-  transition: 0.3s;
+    background: linear-gradient(135deg, #367d2e, #1c6b42);
+    transition: 0.3s;
 }
 
 .moon {
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  box-shadow: 4px 4px 0 0 rgb(255, 255, 255);
-  position: absolute;
-  top: 5px;
-  left: 45px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 0 0 rgb(255, 255, 255);
+    position: absolute;
+    top: 5px;
+    left: 45px;
 }
 
 .dark .flicker {
-  transform: translateX(40px);
-  transition: 0.3s;
+    transform: translateX(40px);
+    transition: 0.3s;
 }
 
-.fa{
-  color: black;
+.fa {
+    color: black;
 }
-.dark .switch{
-  background-color: rgb(12 12 12 / 38%);
-  border: 1px solid #00000078;
-  transition: 0.3s;
+
+.dark .switch {
+    background-color: rgb(12 12 12 / 38%);
+    border: 1px solid #00000078;
+    transition: 0.3s;
 }
-.dark .sun{
-  width: 20px;
+
+.dark .sun {
+    width: 20px;
     height: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 20px 20px yellow;
@@ -139,7 +145,8 @@ header {
     transition: 0.3s;
     opacity: 1;
 }
-.sun{
+
+.sun {
     opacity: 0;
     width: 20px;
     height: 20px;

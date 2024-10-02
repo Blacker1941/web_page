@@ -1,12 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300);
-
 .login-page {
-  width: 360px;
-  padding: 8% 0 0;
-  margin: auto;
+    width: 360px;
+    padding: 8% 0 0;
+    margin: auto;
 }
+
 .form {
-  position: relative;
+    position: relative;
     z-index: 1;
     background: linear-gradient(1deg, rgb(255 243 243 / 2%), #ffffff45, #ffffff00);
     max-width: 360px;
@@ -19,88 +19,101 @@
     border-right: 1px solid;
     border-image: linear-gradient(#f6b73c00, #2c570bd4, #ff000000) 30;
     position: relative;
-
 }
+
 .form input {
-  font-family: "Roboto", sans-serif;
-  outline: 0;
-  background: #f2f2f2;
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  box-sizing: border-box;
-  font-size: 14px;
-  border-radius: 7px;
-
+    font-family: "Roboto", sans-serif;
+    outline: 0;
+    background: #f2f2f2;
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    box-sizing: border-box;
+    font-size: 14px;
+    border-radius: 7px;
 }
+
 .form button {
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  outline: 0;
-  background-image: linear-gradient(45deg, #76b852, #46df4c, #4caf50);
-  width: 100%;
-  border: 0;
-  padding: 15px;
-  color: #FFFFFF;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
-  border-radius: 7px;
-  margin-top: 15px;
+    font-family: "Roboto", sans-serif;
+    text-transform: uppercase;
+    outline: 0;
+    background-image: linear-gradient(45deg, #76b852, #46df4c, #4caf50);
+    width: 100%;
+    border: 0;
+    padding: 15px;
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+    border-radius: 7px;
+    margin-top: 15px;
 }
-.form button:hover,.form button:active,.form button:focus {
-  background-image: linear-gradient(45deg, #1a651d, #4caf50, #1a651d);
+
+.form button:hover,
+.form button:active,
+.form button:focus {
+    background-image: linear-gradient(45deg, #1a651d, #4caf50, #1a651d);
 }
+
 .form .message {
-  margin: 15px 0 0;
-  color: #000000;
-  font-size: 12px;
+    margin: 15px 0 0;
+    color: #000000;
+    font-size: 12px;
 }
+
 .form .message a {
-  color: #0006ff;
-  text-decoration: none;
+    color: #0006ff;
+    text-decoration: none;
 }
+
 .form .register-form {
-  display: none;
-
+    display: none;
 }
+
 .container {
-  position: relative;
-  z-index: 1;
-  max-width: 300px;
-  margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    max-width: 300px;
+    margin: 0 auto;
 }
-.container:before, .container:after {
-  content: "";
-  display: block;
-  clear: both;
 
+.container:before,
+.container:after {
+    content: "";
+    display: block;
+    clear: both;
 }
+
 .container .info {
-  margin: 50px auto;
-  text-align: center;
+    margin: 50px auto;
+    text-align: center;
 }
+
 .container .info h1 {
-  margin: 0 0 15px;
-  padding: 0;
-  font-size: 36px;
-  font-weight: 300;
-  color: #1a1a1a;
+    margin: 0 0 15px;
+    padding: 0;
+    font-size: 36px;
+    font-weight: 300;
+    color: #1a1a1a;
 }
+
 .container .info span {
-  color: #4d4d4d;
-  font-size: 12px;
+    color: #4d4d4d;
+    font-size: 12px;
 }
+
 .container .info span a {
-  color: #000000;
-  text-decoration: none;
+    color: #000000;
+    text-decoration: none;
 }
+
 .container .info span .fa {
-  color: #EF3B3A;
+    color: #EF3B3A;
 }
+
 body {
-  font-family: "Roboto", sans-serif;
+    font-family: "Roboto", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-repeat: no-repeat;
@@ -110,290 +123,309 @@ body {
 }
 
 .modal {
-  background-color: rgb(223, 28, 28);
-  /* background-color: rgb(29, 4, 255); */
-  color: #fff;
-  padding: 30px;
-  border-radius: 10px;
-  display: none;
-  font-size: 20px;
-  font-weight: bold;
-  position: absolute;
-  z-index: 1;
-  right: 10px;
-  top: 10px;
-  transition: all 1s linear;
+    background-color: rgb(223, 28, 28);
+    /* background-color: rgb(29, 4, 255); */
+    color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    display: none;
+    font-size: 20px;
+    font-weight: bold;
+    position: absolute;
+    z-index: 1;
+    right: 10px;
+    top: 10px;
+    transition: all 1s linear;
 }
-.pI{
-  height: 100px;
-}
-.img1{
-  width: 100px;
+
+.pI {
     height: 100px;
 }
-.username-validation , .password-validation{
-  color: red;
-  text-shadow: 0px 0px 8px black;
-  display: none;
-  margin-top: 13px;
+
+.img1 {
+    width: 100px;
+    height: 100px;
+}
+
+.username-validation,
+.password-validation {
+    color: red;
+    text-shadow: 0px 0px 8px black;
+    display: none;
+    margin-top: 13px;
     margin-bottom: -13px;
 }
-.modal{
-  box-shadow: 0px 0px 20px 0px black;
-}
-.box{
-  width: 5px;
-  height: 10px;
-  display: block;
-  float: right;
-  margin-top: 20%;
-  margin-right: -6px;
-  border: #0000000f solid;
-  border-width: 1px 1px 1px 0px;
-  position: relative;
-}
-.lomp{
-  width: 10px;
-  height: 10px;
-  display: block;
-  float: right;
-  margin-right: -12px;
-  border: #00000012 solid;
-  border-width: 1px 1px 1px 0px;
-  margin-top: -1px;
-  border-radius: 0px 95px 95px 0px;
-  background-color: yellow;
+
+.modal {
+    box-shadow: 0px 0px 20px 0px black;
 }
 
+.box {
+    width: 5px;
+    height: 10px;
+    display: block;
+    float: right;
+    margin-top: 20%;
+    margin-right: -6px;
+    border: #0000000f solid;
+    border-width: 1px 1px 1px 0px;
+    position: relative;
+}
+
+.lomp {
+    width: 10px;
+    height: 10px;
+    display: block;
+    float: right;
+    margin-right: -12px;
+    border: #00000012 solid;
+    border-width: 1px 1px 1px 0px;
+    margin-top: -1px;
+    border-radius: 0px 95px 95px 0px;
+    background-color: yellow;
+}
 
 .form .form-element {
-  position: relative;
-  margin-top: 15px;
+    position: relative;
+    margin-top: 15px;
 }
 
-
 .form .form-element .toggle-password {
-  position: absolute;
-  width: 40px;
-  height: 40px;
-  top: 7px;
-  right: 3px;
-  border-radius: 50%;
-  text-align: center;
-  line-height: 35px;
-  font-size: 20px;
-  cursor: pointer;
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    top: 7px;
+    right: 3px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 35px;
+    font-size: 20px;
+    cursor: pointer;
 }
 
 .form .form-element .toggle-password.active i.fa-eye {
-  display: none;
+    display: none;
 }
 
 .form .form-element .toggle-password.active i.fa-eye-slash {
-  display: inline;
+    display: inline;
 }
 
 .form .form-element .toggle-password i.fa-eye-slash {
-  display: none;
+    display: none;
 }
 
 .form .form-element .password-policies {
-  position: relative;
-  top: 0px;
-  left: 50%;
-  transform: translate(-50%);
-  width: 90%;
-  padding: 0px;
-  height: 0px;
-  background: #f5f5f5;
-  border-radius: 5px;
-  margin-top: 10px;
-  box-sizing: border-box;
-  opacity: 1;
-  overflow: hidden;
-  transition: height 300ms ease-in-out, opacity 300ms ease-in-out,
+    position: relative;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%);
+    width: 90%;
+    padding: 0px;
+    height: 0px;
+    background: #f5f5f5;
+    border-radius: 5px;
+    margin-top: 10px;
+    box-sizing: border-box;
+    opacity: 1;
+    overflow: hidden;
+    transition: height 300ms ease-in-out, opacity 300ms ease-in-out,
 }
 
 .form .form-element .password-policies.active {
-  opacity: 1;
-  padding: 10px;
-  height: 180px;
+    opacity: 1;
+    padding: 10px;
+    height: 180px;
 }
 
 .form .form-element .password-policies>div {
-  margin: 15px 10px;
-  font-weight: 600;
-  color: #888;
+    margin: 15px 10px;
+    font-weight: 600;
+    color: #888;
 }
 
 .form .form-element .password-policies>div.active {
-  color: #111;
+    color: #111;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+.form1 {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: space-between;
+}
 
+form i {
+    position: absolute;
+    width: 55px;
+    text-align: center;
+    font-size: 23px;
+    color: #c4c4c4;
+    pointer-events: none;
+}
 
+form input:valid~i {
+    color: #58cff1;
+}
 
-.form1{
-  display: flex;
-  position: relative;
-  align-items: center;
-  justify-content: space-between;
+form input {
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding: 0 50px 0 45px;
+    font-size: 20px;
+    caret-color: #58cff1;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    transition: all 0.1s ease;
 }
-form i{
-  position: absolute;
-  width: 55px;
-  text-align: center;
-  font-size: 23px;
-  color: #c4c4c4;
-  pointer-events: none;
+
+form input::selection {
+    color: #fff;
+    background: #58cff1;
 }
-form input:valid ~ i{
-  color: #58cff1;
-}
-form input{
-  height: 100%;
-  width: 100%;
-  outline: none;
-  padding: 0 50px 0 45px;
-  font-size: 20px;
-  caret-color: #58cff1;
-  border: 2px solid #ddd;
-  border-radius: 5px;
-  transition: all 0.1s ease;
-}
-form input::selection{
-  color: #fff;
-  background: #58cff1;
-}
+
 form input:focus,
-form input:valid{
-  border-color: #58cff1;
+form input:valid {
+    border-color: #58cff1;
 }
-form input::placeholder{
-  color: #c4c4c4;
-}
-form .counter{
-  position: absolute;
-  right: 3px;
-  width: 55px;
-  font-size: 20px;
-  color: #c4c4c4;
-  text-align: center;
-  border-left: 1px solid #d8d8d8;
-  pointer-events: none;
-}
-form input:valid ~ .counter{
-  color: #58cff1;
-  border-color: #58cff1;
-}
-#username{
-  padding-left: 40px;
-}
-.modal-parent{
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh;
-  width: 100%;
-  display: none;
-  z-index: 1;
-}
-#modal{
-  background: white;
-  width: 70%;
-  padding: 30px;
-  border-radius: 6px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 22px;
-  font-family: arial;
-  position: relative;
-  animation: 0.5s drop;
-}
-@keyframes drop {
-  0%{
-    top: -100px;
-  }
-  100%{
-    top: 50%;
-  }
-}
-.X{
-  position: absolute;
-  right: 20px;
-  top: 5px;
-  font-size: 40px;
-  cursor: pointer;
 
+form input::placeholder {
+    color: #c4c4c4;
 }
-section{
-  transition: 2s;
+
+form .counter {
+    position: absolute;
+    right: 3px;
+    width: 55px;
+    font-size: 20px;
+    color: #c4c4c4;
+    text-align: center;
+    border-left: 1px solid #d8d8d8;
+    pointer-events: none;
 }
+
+form input:valid~.counter {
+    color: #58cff1;
+    border-color: #58cff1;
+}
+
+#username {
+    padding-left: 40px;
+}
+
+.modal-parent {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    display: none;
+    z-index: 1;
+}
+
+#modal {
+    background: white;
+    width: 70%;
+    padding: 30px;
+    border-radius: 6px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 22px;
+    font-family: arial;
+    position: relative;
+    animation: 0.5s drop;
+}
+
+@keyframes drop {
+    0% {
+        top: -100px;
+    }
+    100% {
+        top: 50%;
+    }
+}
+
+.X {
+    position: absolute;
+    right: 20px;
+    top: 5px;
+    font-size: 40px;
+    cursor: pointer;
+}
+
+section {
+    transition: 2s;
+}
+
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600&display=swap");
 .dark a {
-  color: rgb(246, 169, 241);
+    color: rgb(246, 169, 241);
 }
 
 header {
-  display: flex;
-  justify-content: flex-end;
-  padding: 30px;
+    display: flex;
+    justify-content: flex-end;
+    padding: 30px;
 }
 
 .switch {
-  width: 80px;
-  height: 40px;
-  border-radius: 20px;
-  background-color: rgb(12 12 12 / 11%);
-  position: relative;
-  border: 1px solid #00000040;
-  transition: 0.3s;
+    width: 80px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: rgb(12 12 12 / 11%);
+    position: relative;
+    border: 1px solid #00000040;
+    transition: 0.3s;
 }
 
 .flicker {
-  width: 30px;
-  height: 30px;
-  border-radius: 15px;
-  background-color: rgb(255, 255, 255);
-  position: absolute;
-  top: 5px;
-  left: 5px;
-  transition: 0.3s;
-  box-shadow: inset 4px 4px 4px rgb(255, 255, 255),
-    inset -4px -4px 4px rgb(195 193 198 / 90%);
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transition: 0.3s;
+    box-shadow: inset 4px 4px 4px rgb(255, 255, 255), inset -4px -4px 4px rgb(195 193 198 / 90%);
 }
 
 .dark {
-  background-image: linear-gradient(45deg, #287502, #039708, #287502);
-  transition: 0.3s;
+    background-image: linear-gradient(45deg, #287502, #039708, #287502);
+    transition: 0.3s;
 }
 
 .moon {
-  width: 20px;
-  height: 20px;
-  border-radius: 10px;
-  box-shadow: 4px 4px 0 0 rgb(255, 255, 255);
-  position: absolute;
-  top: 5px;
-  left: 45px;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    box-shadow: 4px 4px 0 0 rgb(255, 255, 255);
+    position: absolute;
+    top: 5px;
+    left: 45px;
 }
 
 .dark .flicker {
-  transform: translateX(40px);
-  transition: 0.3s;
+    transform: translateX(40px);
+    transition: 0.3s;
 }
-.fa{
-  color: black;
+
+.fa {
+    color: black;
 }
-.dark .switch{
-  background-color: rgb(12 12 12 / 38%);
-  border: 1px solid #00000078;
-  transition: 0.3s;
+
+.dark .switch {
+    background-color: rgb(12 12 12 / 38%);
+    border: 1px solid #00000078;
+    transition: 0.3s;
 }
-.dark .sun{
-  width: 20px;
+
+.dark .sun {
+    width: 20px;
     height: 20px;
     border-radius: 10px;
     box-shadow: 0px 0px 20px 20px yellow;
@@ -404,7 +436,8 @@ header {
     transition: 0.3s;
     opacity: 1;
 }
-.sun{
+
+.sun {
     opacity: 0;
     width: 20px;
     height: 20px;
@@ -416,7 +449,12 @@ header {
     background-color: yellow;
     transition: 0.3s;
 }
+
 @keyframes move {
-  from {top: 1px;}
-  to {top: 300px;}
+    from {
+        top: 1px;
+    }
+    to {
+        top: 300px;
+    }
 }

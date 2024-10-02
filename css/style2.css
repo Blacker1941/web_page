@@ -1,65 +1,72 @@
 body {
-  background-image: url(../image/sky.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+    background-image: url(../image/sky.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
+
 .fnameInput,
 .lnameInput,
 .phoneInput,
 .emailInput,
 .countrySelect,
 .citySelect {
-  width: 80%;
-  height: 40px;
-  border-radius: 5px;
-  border: 0px;
-  padding: 0px 10px;
-}
-.btn {
-  height: 30px;
-  border-radius: 5px;
-  border: 0px;
-  padding: 0px 20px;
-  outline: 0;
-  background-image: linear-gradient(45deg, #76b852, #46df4c, #4caf50);
-  color: #FFFFFF;
-  font-size: 14px;
-  -webkit-transition: all 0.3 ease;
-  transition: all 0.3 ease;
-  cursor: pointer;
-}
-.btn :hover{
-  background-image: linear-gradient(45deg, #1a651d, #4caf50, #1a651d);
-}
-.box {
-  text-align: center;
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-.container {
-  margin-top: 100px;
-  padding-top: 60px;
-  padding-bottom: 60px;
-  background-color: rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
-  border-left: 1px solid;
-  border-right: 1px solid;
-  border-image: linear-gradient(#f6b73c00, #148ffd61, #ff000000) 30;
-}
-@media (max-width: 767px) {
-  .container {
-      width: 400px;
-  }
-}
-@media (max-width: 440px) {
-  .container {
-      width: 270px;
-  }
-}
-@media (max-height: 650px) {
-  .container {
-    height: 470px;
-  }
+    width: 80%;
+    height: 40px;
+    border-radius: 5px;
+    border: 0px;
+    padding: 0px 10px;
 }
 
+.btn {
+    height: 30px;
+    border-radius: 5px;
+    border: 0px;
+    padding: 0px 20px;
+    outline: 0;
+    background-image: linear-gradient(45deg, #76b852, #46df4c, #4caf50);
+    color: #FFFFFF;
+    font-size: 14px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    cursor: pointer;
+}
+
+.btn :hover {
+    background-image: linear-gradient(45deg, #1a651d, #4caf50, #1a651d);
+}
+
+.box {
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.container {
+    margin-top: 100px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-image: linear-gradient(#f6b73c00, #148ffd61, #ff000000) 30;
+}
+
+@media (max-width: 767px) {
+    .container {
+        width: 400px;
+    }
+}
+
+@media (max-width: 440px) {
+    .container {
+        width: 270px;
+    }
+}
+
+@media (max-height: 650px) {
+    .container {
+        height: 470px;
+    }
+}

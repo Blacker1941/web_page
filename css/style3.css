@@ -1,140 +1,149 @@
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  font-family: 'Open Sans', sans-serif;
-  background: #222;
-  font-size: 120%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    background: #222;
+    font-size: 120%;
 }
 
 .card {
-  background: #096d3f00;
-  color: white;
-  padding: 2em;
-  border-radius: 30px;
-  width: 100%;
-  max-width: 420px;
-  margin: 1em;
-  border: 1px solid #057b0563;
+    background: #096d3f00;
+    color: white;
+    padding: 2em;
+    border-radius: 30px;
+    width: 100%;
+    max-width: 420px;
+    margin: 1em;
+    border: 1px solid #057b0563;
 }
 
 .search {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 button {
-  margin: 0.5em;
-  border-radius: 50%;
-  border: none;
-  height: 44px;
-  width: 44px;
-  outline: none;
-  background: #7c7c7c2b;
-  color: white;
-  cursor: pointer;
-  transition: 0.2s ease-in-out;
+    margin: 0.5em;
+    border-radius: 50%;
+    border: none;
+    height: 44px;
+    width: 44px;
+    outline: none;
+    background: #7c7c7c2b;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s ease-in-out;
 }
 
 input.search-bar {
-  border: none;
-  outline: none;
-  padding: 0.4em 1em;
-  border-radius: 24px;
-  background: #7c7c7c2b;
-  color: white;
-  font-family: inherit;
-  font-size: 105%;
-  width: calc(100% - 100px);
+    border: none;
+    outline: none;
+    padding: 0.4em 1em;
+    border-radius: 24px;
+    background: #7c7c7c2b;
+    color: white;
+    font-family: inherit;
+    font-size: 105%;
+    width: calc(100% - 100px);
 }
 
 button:hover {
-  background: #7c7c7c6b;
+    background: #7c7c7c6b;
 }
 
 h1.temp {
-  margin: 0;
-  margin-bottom: 0.4em;
+    margin: 0;
+    margin-bottom: 0.4em;
 }
 
 .flex {
-  display: flex;
-  align-items: center;
+    display: flex;
+    align-items: center;
 }
 
 .description {
-  text-transform: capitalize;
-  margin-left: 8px;
+    text-transform: capitalize;
+    margin-left: 8px;
 }
 
 .weather.loading {
-  visibility: hidden;
-  max-height: 20px;
-  position: relative;
+    visibility: hidden;
+    max-height: 20px;
+    position: relative;
 }
 
 .weather.loading:after {
-  visibility: visible;
-  content: "Loading...";
-  color: white;
-  position: absolute;
-  top: 0;
-  left: 20px;
+    visibility: visible;
+    content: "Loading...";
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 20px;
 }
+
 ul {
-  list-style: none;
+    list-style: none;
 }
+
 .context-menu {
-  position: absolute;
-  font-size: 18px;
-  box-shadow: 0px 0px 20px -5px black;
+    position: absolute;
+    font-size: 18px;
+    box-shadow: 0px 0px 20px -5px black;
 }
+
 .menu {
-  display: flex;
-  flex-direction: column;
-  background-color: #fff;
-  border-radius: 10px;
-  box-shadow: 0 10px 20px rgb(64 64 64 / 5%);
-  padding: 10px 0;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin: 0;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgb(64 64 64 / 5%);
+    padding: 10px 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    margin: 0;
 }
-.menu > li > a {
-  font: inherit;
-  border: 0;
-  padding: 10px 30px 10px 15px;
-  width: 79%;
-  display: flex;
-  align-items: center;
-  position: relative;
-  text-decoration: unset;
-  color: #000;
-  font-weight: 500;
-  transition: 0.5s linear;
-  -webkit-transition: 0.5s linear;
-  -moz-transition: 0.5s linear;
-  -ms-transition: 0.5s linear;
-  -o-transition: 0.5s linear;
+
+.menu>li>a {
+    font: inherit;
+    border: 0;
+    padding: 10px 30px 10px 15px;
+    width: 79%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-decoration: unset;
+    color: #000;
+    font-weight: 500;
+    transition: 0.5s linear;
+    -webkit-transition: 0.5s linear;
+    -moz-transition: 0.5s linear;
+    -ms-transition: 0.5s linear;
+    -o-transition: 0.5s linear;
 }
-.menu > li > a:hover {
-  background:#f1f3f7;
-  color: #006443;
+
+.menu>li>a:hover {
+    background: #f1f3f7;
+    color: #006443;
 }
-.menu > li > a > i {
-  padding-right: 10px;
+
+.menu>li>a>i {
+    padding-right: 10px;
 }
-.menu > li.trash > a:hover {
-  color: red;
+
+.menu>li.trash>a:hover {
+    color: red;
 }
-.fist_a{
-  padding-top: 20px;
-  border-radius: 10px 15px 0px 0px;
+
+.fist_a {
+    padding-top: 20px;
+    border-radius: 10px 15px 0px 0px;
 }
-.last_a{
-  padding-bottom: 20px;
-  border-radius: 0px 0px 10px 10px;
+
+.last_a {
+    padding-bottom: 20px;
+    border-radius: 0px 0px 10px 10px;
 }
