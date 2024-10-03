@@ -458,3 +458,22 @@ header {
         top: 300px;
     }
 }
+
+@keyframes explode {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.5);
+        opacity: 0.7;
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.explode-animation {
+    animation: explode 0.8s forwards;
+}

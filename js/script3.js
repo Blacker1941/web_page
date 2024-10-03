@@ -14,33 +14,33 @@ let $ = document
 let searchBtn = $.getElementById(`search`)
 let searchBar = $.querySelector(`.search-bar`)
 
-searchBtn.addEventListener(`click`, function () {
-  generateNewcitiesData()
+searchBtn.addEventListener(`click`, function() {
+    generateNewcitiesData()
 })
 
 
-searchBar.addEventListener(`keydown`, function (event) {
-  if (event.keyCode === 13) {
-    generateNewcitiesData()
-  }
+searchBar.addEventListener(`keydown`, function(event) {
+    if (event.keyCode === 13) {
+        generateNewcitiesData()
+    }
 })
 
 function generateNewcitiesData() {
-  let searchBarValue = searchBar.value.toLowerCase();
-  let mainCityDatas = citiesData[searchBarValue];
+    let searchBarValue = searchBar.value.toLowerCase()
+    let mainCityDatas = citiesData[searchBarValue]
 
-  console.log(mainCityDatas)
+    console.log(mainCityDatas)
 
-  if (mainCityDatas) {
-      $.querySelector(`.city`).innerHTML = "Weather in " + mainCityDatas.city
-      $.querySelector(`.temp`).innerHTML = mainCityDatas.temp + `°C`
-      $.querySelector(`.description`).innerHTML = mainCityDatas.weather
-      $.querySelector(`.humidity`).innerHTML = "Humidity: " + mainCityDatas.humidity
-      $.querySelector(`.wind`).innerHTML = "Wind speed: " + mainCityDatas.windSpeed + `km/h`
-      $.querySelector(`.weather`).classList.remove(`loading`)
-  } else {
-      alert(`شهر مورد نظر را به درستی وارد نمایید`)
-  }
+    if (mainCityDatas) {
+        $.querySelector(`.city`).innerHTML = "Weather in " + mainCityDatas.city
+        $.querySelector(`.temp`).innerHTML = mainCityDatas.temp + `°C`
+        $.querySelector(`.description`).innerHTML = mainCityDatas.weather
+        $.querySelector(`.humidity`).innerHTML = "Humidity: " + mainCityDatas.humidity
+        $.querySelector(`.wind`).innerHTML = "Wind speed: " + mainCityDatas.windSpeed + `km/h`
+        $.querySelector(`.weather`).classList.remove(`loading`)
+    } else {
+        alert(`شهر مورد نظر را به درستی وارد نمایید`)
+    }
 }
 
 // let citiesData = [
@@ -84,27 +84,27 @@ const contextMenu = $.getElementById(`contextMenu`)
 
 
 function contextHandler(event) {
-  event.preventDefault()
+    event.preventDefault()
 
-  if (contextMenu.style.display === `none`) {
+    if (contextMenu.style.display === `none`) {
 
-    contextMenu.style.left = event.pageX + `px`
-    contextMenu.style.top = event.pageY + `px`
+        contextMenu.style.left = event.pageX + `px`
+        contextMenu.style.top = event.pageY + `px`
 
-    contextMenu.style.display = `block`
-  } else {
-    contextMenu.style.left = event.pageX + `px`
-    contextMenu.style.top = event.pageY + `px`
-  }
+        contextMenu.style.display = `block`
+    } else {
+        contextMenu.style.left = event.pageX + `px`
+        contextMenu.style.top = event.pageY + `px`
+    }
 }
 
 function clickConTextMenu() {
-  contextMenu.style.display = `none`
+    contextMenu.style.display = `none`
 }
 
 function keyDownHandler(event) {
-  if (event.keyCode === 27)
-    contextMenu.style.display = `none`
+    if (event.keyCode === 27)
+        contextMenu.style.display = `none`
 }
 
 $.body.addEventListener(`contextmenu`, contextHandler)

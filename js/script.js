@@ -24,16 +24,16 @@ function dataValidation() {
         clearInputs()
     }
 
-    setTimeout(function () {
+    setTimeout(function() {
         modal.style.display = `none`
     }, 3000)
 }
-passWordInput.addEventListener(`keydown`, function (event) {
+passWordInput.addEventListener(`keydown`, function(event) {
     if (event.keyCode === 13) {
         dataValidation()
     }
 })
-userNameInput.addEventListener(`keydown`, function (event) {
+userNameInput.addEventListener(`keydown`, function(event) {
     if (event.keyCode === 13) {
         dataValidation()
     }
@@ -88,54 +88,41 @@ function usernameValidation() {
         passwordMessage.style["padding-bottom"] = "13px"
     }
 }
+
 function passwordValidation() {
     if (passwordInput.value.length < 8) {
         passwordMessage.style.display = `block`
         passWordInput.style["boxShadow"] = "0px 0px 20px 0px red"
-    }else {
+    } else {
         passwordMessage.style.display = `none`
         passWordInput.style["boxShadow"] = "0px 0px 0px 0px red"
 
     }
 }
 
-let redValue, greenValue, BlueValue
-let lomp = $.querySelector(`.lomp`)
+let lomp = $.querySelector('.lomp')
+let box = $.querySelector('.box')
 
-setInterval(function () {
 
-    redValue = Math.floor(Math.random() * 255)
-    greenValue = Math.floor(Math.random() * 255)
-    BlueValue = Math.floor(Math.random() * 255)
+setInterval(function() {
+    let redValue = Math.floor(Math.random() * 255)
+    let greenValue = Math.floor(Math.random() * 255)
+    let blueValue = Math.floor(Math.random() * 255)
+    lomp.style.backgroundColor = `rgb(${redValue}, ${greenValue}, ${blueValue})`
+}, 1000);
 
-    lomp.style.backgroundColor = `rgb(` + redValue + `,` + greenValue + `,` + BlueValue + `)`
-}, 1000)
 
-function _id(id_name) {
-  return $.getElementById(id_name);
-}
+lomp.addEventListener('dblclick', function() {
+    lomp.classList.add('explode-animation')
+    box.classList.add('explode-animation')
+});
+lomp.addEventListener('animationend', function() {
+    lomp.remove()
+    box.remove()
+});
 
-function _class(class_name) {
-  return $.getElementsByClassName(class_name);
-}
-
-// Select Elems
-var togglePassword = _class("toggle-password");
-var passwordField = _id("password-field");
-
-// Fire click event on eye icon
-togglePassword[0].addEventListener("click", function () {
-  if (passwordField.type == "text") {
-    passwordField.type = "password";
-    togglePassword[0].classList.remove("active");
-  } else {
-    passwordField.type = "text";
-    togglePassword[0].classList.add("active");
-  }
-})
-
-let btn = $.querySelector(`lomp`)
-let lompElem = $.getElementById(`titel`)
+// let btn = $.querySelector(`lomp`)
+// let lompElem = $.getElementById(`titel`)
 // let boxElem = $.getElementsByClassName(`box`)
 
 // btn.addEventListener(`dblclick`, function () {
@@ -158,7 +145,7 @@ const inputElem = $.querySelector(`form input`)
 const spanElem = $.querySelector(`.counter`)
 const inputMaxLength = inputElem.getAttribute(`maxlength`)
 
-inputElem.addEventListener(`keyup`, function () {
+inputElem.addEventListener(`keyup`, function() {
     spanElem.innerHTML = inputMaxLength - inputElem.value.length
 })
 
@@ -168,12 +155,12 @@ const x = $.querySelector(`.X`)
 const sectionElem = $.querySelector(`section`)
 
 
-function showModal () {
+function showModal() {
     modalParent.style.display = `block`
     sectionElem.style.filter = `blur(10px)`
 }
 
-function hideModalWithX () {
+function hideModalWithX() {
     modalParent.style.display = `none`
     sectionElem.style.filter = `blur(0px)`
 }
@@ -191,7 +178,7 @@ document.body.addEventListener(`keyup`, hideModalWithEsc)
 
 const switchElement = document.querySelector(`.switch`)
 
-switchElement.addEventListener(`click`, function () {
+switchElement.addEventListener(`click`, function() {
     $.body.classList.toggle(`dark`)
 
     if (document.body.className.includes(`dark`)) {
@@ -202,20 +189,10 @@ switchElement.addEventListener(`click`, function () {
 })
 
 
-window.onload = function () {
+window.onload = function() {
     let localStorageTheme = localStorage.getItem(`theme`)
 
     if (localStorageTheme === `dark`) {
         $.body.classList.add(`dark`)
     }
 }
-
-const addAnimationBtn = $.querySelector(`.box`)
-const boxElem = $.querySelector(`.box`)
-
-function setAnimation() {
-    boxElem.style.animation = `move 1s 1`
-}
-
-addAnimationBtn.addEventListener(`click`, setAnimation)
-boxElem.addEventListener(`animationend`, e => e.target.remove())
