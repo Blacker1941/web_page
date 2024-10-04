@@ -311,7 +311,7 @@ function toggleModal() {
 }
 
 button.addEventListener(`click`, toggleModal)
-x.addEventListener(`click`, hideModalWithX)
+x.addEventListener(`click`, toggleModal)
 
 
 const colorBtns = $.querySelectorAll(`.btn`)
