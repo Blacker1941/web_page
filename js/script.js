@@ -28,16 +28,19 @@ function dataValidation() {
         modal.style.display = `none`
     }, 3000)
 }
-passWordInput.addEventListener(`keydown`, function(event) {
-    if (event.keyCode === 13) {
-        dataValidation()
-    }
-})
-userNameInput.addEventListener(`keydown`, function(event) {
-    if (event.keyCode === 13) {
-        dataValidation()
-    }
-})
+
+function addEnterKeyListener(inputElement) {
+    inputElement.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            dataValidation();
+        }
+    });
+}
+
+
+addEnterKeyListener(passWordInput);
+addEnterKeyListener(userNameInput);
+
 
 function clearInputs() {
     userNameInput.value = ``

@@ -356,7 +356,7 @@ const blackerElem = $.querySelector(`.h1Blacker`)
 const scrollElem = $.querySelector(`.scroll`)
 
 $.addEventListener(`scroll`, function() {
-    if (document.documentElement.scrollTop > 0) {
+    if ($.documentElement.scrollTop > 0) {
         MainNav.style.height = `0px`
         button.style.height = `0px`
         button.style.width = `0px`
@@ -417,7 +417,7 @@ window.addEventListener(`scroll`, function() {
 
     let scrollTop = window.scrollY
 
-    let documentHeight = document.body.clientHeight
+    let documentHeight = $.body.clientHeight
 
     let windowHeight = window.innerHeight
 
