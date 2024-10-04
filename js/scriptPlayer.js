@@ -15,19 +15,19 @@ const background = document.getElementById("background")
 
 // Music
 const songs = [{
-        path: "media/html.m4a",
+        path: "media/html.mp4",
         displayName: "Html Padcast",
         artist: "Ozbi",
         cover: "https://images.genius.com/ee202c6f724ffd4cf61bd01a205eeb47.1000x1000x1.jpg",
     },
     {
-        path: "media/kar.m4a",
+        path: "media/kar.mp4",
         displayName: "Developing",
         artist: "Flora Cash",
         cover: "image/peakpx.jpg",
     },
     {
-        path: "media/bazar.m4a",
+        path: "media/bazar.mp4",
         displayName: "Earn",
         artist: "Linkin Park",
         cover: "https://images.genius.com/c5a58cdaab9f3199214f0e3c26abbd0e.1000x1000x1.jpg",
