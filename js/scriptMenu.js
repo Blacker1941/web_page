@@ -277,38 +277,67 @@ function animationXHandler() {
 window.addEventListener(`load`, setAnimation)
 XElem.addEventListener(`click`, animationXHandler)
 
-const button = $.querySelector(`.profile`)
-const modalParent = $.querySelector(`.modal-parent`)
-const x = $.querySelector(`.XProfile`)
-let isModalOpen = false
+const button = document.querySelector(`.profile`)
+const modalParent = document.querySelector(`.modal-parent`)
+const x = document.querySelector(`.XProfile`)
 
+let isModalOpen = false
+let isAnimating = false
 
 function showModal() {
-    modalParent.className = `modal-parent1`
-    modalParent.style.animation = `moveProfile 1s 1`
+    if (!isAnimating) {
+        isAnimating = true
+        disableClick()
 
+        modalParent.className = `modal-parent1`
+        modalParent.style.animation = `moveProfile 1s 1`
+
+        modalParent.addEventListener('animationend', function() {
+            enableClick()
+            isAnimating = false
+        }, { once: true })
+    }
 }
 
 function hideModalWithX() {
-    modalParent.style.animation = `moveendProfile 1s 1`
-    modalParent.addEventListener("animationend", animationEndHandlerProfile)
+    if (!isAnimating) {
+        isAnimating = true
+        disableClick()
 
+        modalParent.style.animation = `moveendProfile 1s 1`
+
+        modalParent.addEventListener('animationend', function() {
+            modalParent.className = `modal-parent`
+            enableClick() // فعال کردن کلیک پس از پایان انیمیشن
+            isAnimating = false
+        }, { once: true })
+    }
 }
 
-function animationEndHandlerProfile() {
-    modalParent.className = `modal-parent`
-    modalParent.removeEventListener(`animationend`, animationEndHandlerProfile)
+function disableClick() {
+    button.style.pointerEvents = 'none'
+    x.style.pointerEvents = 'none'
+}
 
+function enableClick() {
+    button.style.pointerEvents = 'auto'
+    x.style.pointerEvents = 'auto'
 }
 
 function toggleModal() {
-    if (isModalOpen) {
-        hideModalWithX()
-    } else {
-        showModal()
+    if (!isAnimating) {
+        if (isModalOpen) {
+            hideModalWithX()
+        } else {
+            showModal()
+        }
+        isModalOpen = !isModalOpen
     }
-    isModalOpen = !isModalOpen
 }
+
+button.addEventListener(`click`, toggleModal)
+x.addEventListener(`click`, toggleModal)
+
 
 button.addEventListener(`click`, toggleModal)
 x.addEventListener(`click`, toggleModal)
