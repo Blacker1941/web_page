@@ -6,18 +6,24 @@ let userNameInput = $.querySelector(`.username`)
 let passWordInput = $.querySelector(`.password`)
 let modal = $.querySelector(`.modal`)
 
-
 function dataValidation() {
     let userNameValue = userNameInput.value
     let passwordValue = passWordInput.value
 
-    if (userNameValue.length < 13 || passwordValue.length < 8) {
-        // alert(`Error`)
-        modal.style.background = `rgb(223, 28, 28)`
+    if (localStorage.getItem(userNameValue, passwordValue)) {
+        modal.style.background = `red`
+        modal.innerHTML = `قبلاً ثبت‌ نام کرده است ${userNameValue}کاربر با نام`
+        modal.style.display = `inline`
+        clearInputs()
+
+    } else if (userNameValue.length < 5 || passwordValue.length < 8) {
+        modal.style.background = `red`
         modal.innerHTML = `لطفا اطلاعات را به درستی وارد نمایید`
         modal.style.display = `inline`
 
     } else {
+        localStorage.setItem(userNameValue, passwordValue)
+
         modal.style.background = `green`
         modal.innerHTML = `لاگین با موفقیت انجام شد`
         modal.style.display = `inline`
@@ -32,20 +38,19 @@ function dataValidation() {
 function addEnterKeyListener(inputElement) {
     inputElement.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
-            dataValidation();
+            dataValidation()
         }
-    });
+    })
 }
 
-
-addEnterKeyListener(passWordInput);
-addEnterKeyListener(userNameInput);
-
+addEnterKeyListener(passWordInput)
+addEnterKeyListener(userNameInput)
 
 function clearInputs() {
     userNameInput.value = ``
     passWordInput.value = ``
 }
+
 
 // let usernameMessage = document.querySelector(`.username-validation`)
 // let passwordMessage = document.querySelector(`.password-validation`)
