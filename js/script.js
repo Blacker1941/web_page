@@ -117,17 +117,17 @@ setInterval(function() {
     let greenValue = Math.floor(Math.random() * 255)
     let blueValue = Math.floor(Math.random() * 255)
     lomp.style.backgroundColor = `rgb(${redValue}, ${greenValue}, ${blueValue})`
-}, 1000);
+}, 1000)
 
 
 lomp.addEventListener('dblclick', function() {
     lomp.classList.add('explode-animation')
     box.classList.add('explode-animation')
-});
+})
 lomp.addEventListener('animationend', function() {
     lomp.remove()
     box.remove()
-});
+})
 
 // let btn = $.querySelector(`lomp`)
 // let lompElem = $.getElementById(`titel`)

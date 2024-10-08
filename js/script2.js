@@ -6,26 +6,26 @@ let countrySelectBox = document.querySelector(`.countrySelect`)
 let citySelect = document.querySelector(`.citySelect`)
 
 let countriesData = {
-    Iran: [`Tehran`, `Shiraz`, `Tabriz`,`Esfehan`, `Arak`, `Pasargadae`],
+    Iran: [`Tehran`, `Shiraz`, `Tabriz`, `Esfehan`, `Arak`, `Pasargadae`],
     Turkey: [`Error ***`],
-    US:[`Los Angles`, `San Diego`, `New York`]
+    US: [`Los Angles`, `San Diego`, `New York`]
 }
 
-countrySelectBox.addEventListener(`change`, function () {
+countrySelectBox.addEventListener(`change`, function() {
 
     if (countrySelectBox.value === `Please Select`) {
-        citySelect.innerHTML = ``;
+        citySelect.innerHTML = ``
         citySelect.innerHTML += "<option>Select City ...</option>"
     } else {
-    let mainCounteryName = countrySelectBox.value
-    let mainCounteryCities = countriesData[mainCounteryName]
+        let mainCounteryName = countrySelectBox.value
+        let mainCounteryCities = countriesData[mainCounteryName]
 
-    citySelect.innerHTML = ``;
+        citySelect.innerHTML = ``
 
-    mainCounteryCities.forEach(function (city) {
+        mainCounteryCities.forEach(function(city) {
 
-        citySelect.innerHTML += `<option>` + city + `</option>`
-    })
+            citySelect.innerHTML += `<option>` + city + `</option>`
+        })
     }
 
 
