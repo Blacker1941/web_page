@@ -1,149 +1,94 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    background: #222;
-    font-size: 120%;
+    font-family: 'montserrat', sans-serif;
+    background-image: url('../image/bg.jpg');
+    background-size: cover;
+    background-position: top center;
 }
 
-.card {
-    background: #096d3f00;
-    color: white;
-    padding: 2em;
-    border-radius: 30px;
-    width: 100%;
-    max-width: 420px;
-    margin: 1em;
-    border: 1px solid #057b0563;
-}
-
-.search {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-button {
-    margin: 0.5em;
-    border-radius: 50%;
-    border: none;
-    height: 44px;
-    width: 44px;
-    outline: none;
-    background: #7c7c7c2b;
-    color: white;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-}
-
-input.search-bar {
-    border: none;
-    outline: none;
-    padding: 0.4em 1em;
-    border-radius: 24px;
-    background: #7c7c7c2b;
-    color: white;
-    font-family: inherit;
-    font-size: 105%;
-    width: calc(100% - 100px);
-}
-
-button:hover {
-    background: #7c7c7c6b;
-}
-
-h1.temp {
-    margin: 0;
-    margin-bottom: 0.4em;
-}
-
-.flex {
-    display: flex;
-    align-items: center;
-}
-
-.description {
-    text-transform: capitalize;
-    margin-left: 8px;
-}
-
-.weather.loading {
-    visibility: hidden;
-    max-height: 20px;
-    position: relative;
-}
-
-.weather.loading:after {
-    visibility: visible;
-    content: "Loading...";
-    color: white;
-    position: absolute;
-    top: 0;
-    left: 20px;
-}
-
-ul {
-    list-style: none;
-}
-
-.context-menu {
-    position: absolute;
-    font-size: 18px;
-    box-shadow: 0px 0px 20px -5px black;
-}
-
-.menu {
+.app-wrap {
     display: flex;
     flex-direction: column;
-    background-color: #fff;
-    border-radius: 10px;
-    box-shadow: 0 10px 20px rgb(64 64 64 / 5%);
-    padding: 10px 0;
-    padding-top: 0px;
-    padding-bottom: 0px;
-    margin: 0;
+    min-height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.6));
 }
 
-.menu>li>a {
-    font: inherit;
-    border: 0;
-    padding: 10px 30px 10px 15px;
-    width: 79%;
+header {
     display: flex;
+    justify-content: center;
     align-items: center;
-    position: relative;
-    text-decoration: unset;
-    color: #000;
+    padding: 50px 15px 15px;
+}
+
+header input {
+    width: 100%;
+    max-width: 280px;
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 16px 0px 16px 0px;
+    border-bottom: 3px solid #DF8E00;
+    color: #313131;
+    font-size: 20px;
+    font-weight: 300;
+    transition: 0.2s ease-out;
+}
+
+header input:focus {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+main {
+    flex: 1 1 100%;
+    padding: 25px 25px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.location .city {
+    color: #FFF;
+    font-size: 32px;
     font-weight: 500;
-    transition: 0.5s linear;
-    -webkit-transition: 0.5s linear;
-    -moz-transition: 0.5s linear;
-    -ms-transition: 0.5s linear;
-    -o-transition: 0.5s linear;
+    margin-bottom: 5px;
 }
 
-.menu>li>a:hover {
-    background: #f1f3f7;
-    color: #006443;
+.location .date {
+    color: #FFF;
+    font-size: 16px;
 }
 
-.menu>li>a>i {
-    padding-right: 10px;
+.current .temp {
+    color: #FFF;
+    font-size: 102px;
+    font-weight: 900;
+    margin: 30px 0px;
+    text-shadow: 2px 10px rgba(0, 0, 0, 0.6);
 }
 
-.menu>li.trash>a:hover {
-    color: red;
+.current .temp span {
+    font-weight: 500;
 }
 
-.fist_a {
-    padding-top: 20px;
-    border-radius: 10px 15px 0px 0px;
+.current .weather {
+    color: #FFF;
+    font-size: 32px;
+    font-weight: 700;
+    font-style: italic;
+    margin-bottom: 15px;
+    text-shadow: 0px 3px rgba(0, 0, 0, 0.4);
 }
 
-.last_a {
-    padding-bottom: 20px;
-    border-radius: 0px 0px 10px 10px;
+.current .hi-low {
+    color: #FFF;
+    font-size: 24px;
+    font-weight: 500;
+    text-shadow: 0px 4px rgba(0, 0, 0, 0.4);
 }
