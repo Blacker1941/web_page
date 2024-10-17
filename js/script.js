@@ -5,6 +5,7 @@ let $ = document
 let userNameInput = $.querySelector(`.username`)
 let passWordInput = $.querySelector(`.password`)
 let modal = $.querySelector(`.modal`)
+let togglePasswordButton = $.querySelector(`.toggle-password`) // دکمه تغییر نمایش پسورد
 
 function dataValidation() {
     let userNameValue = userNameInput.value
@@ -51,45 +52,26 @@ function clearInputs() {
     passWordInput.value = ``
 }
 
-
-// let usernameMessage = document.querySelector(`.username-validation`)
-// let passwordMessage = document.querySelector(`.password-validation`)
-
-// let usernameInput = document.querySelector(`.username`)
-// let passwordInput = document.querySelector(`.password`)
-
-// function usernameValidathion() {
-//     //alert(`pidaRET`)
-//     if (usernameInput.value.length < 8) {
-//         usernameMessage.innerHTML = `At least 12 characters`
-//         usernameMessage.style.display = `block`
-//     } else {
-//         usernameMessage.style.display = `none`
-//     }
-// }
-// function passwordValidation() {
-//     //alert(`PIODAREYWE`)
-//     if (passWordInputInput.value.length < 8) {
-//         passwordMessage.innerHTML = `At least 8 characters`
-//         passwordMessage.style.display = `block`
-//     } else {
-//         passwordMessage.style.display = `none`
-//     }
-// }
+togglePasswordButton.addEventListener('click', function() {
+    if (passWordInput.type === 'password') {
+        passWordInput.type = 'text'
+        togglePasswordButton.classList.add("active");
+    } else {
+        passWordInput.type = 'password'
+        togglePasswordButton.classList.remove("active");
+    }
+})
 
 let usernameInput = $.querySelector(`.username`)
 let passwordInput = $.querySelector(`.password`)
-
 let usernameMessage = $.querySelector(`.username-validation`)
 let passwordMessage = $.querySelector(`.password-validation`)
-
 
 function usernameValidation() {
     if (usernameInput.value.length < 13) {
         usernameMessage.style.display = `block`
         userNameInput.style["boxShadow"] = "0px 0px 20px 0px red"
         usernameMessage.style["padding-bottom"] = "13px"
-
     } else {
         usernameMessage.style.display = `none`
         userNameInput.style["boxShadow"] = "0px 0px 0px 0px red"
@@ -104,13 +86,11 @@ function passwordValidation() {
     } else {
         passwordMessage.style.display = `none`
         passWordInput.style["boxShadow"] = "0px 0px 0px 0px red"
-
     }
 }
 
 let lomp = $.querySelector('.lomp')
 let box = $.querySelector('.box')
-
 
 setInterval(function() {
     let redValue = Math.floor(Math.random() * 255)
@@ -119,35 +99,15 @@ setInterval(function() {
     lomp.style.backgroundColor = `rgb(${redValue}, ${greenValue}, ${blueValue})`
 }, 1000)
 
-
 lomp.addEventListener('dblclick', function() {
     lomp.classList.add('explode-animation')
     box.classList.add('explode-animation')
 })
+
 lomp.addEventListener('animationend', function() {
     lomp.remove()
     box.remove()
 })
-
-// let btn = $.querySelector(`lomp`)
-// let lompElem = $.getElementById(`titel`)
-// let boxElem = $.getElementsByClassName(`box`)
-
-// btn.addEventListener(`dblclick`, function () {
-//     boxElem[0].remove()
-// })
-
-// let passwordElem = $.getElementById(`password-field`)
-
-// function copyHandler(event) {
-//     event.preventDefault()
-// }
-// function cutHandler(event) {
-//     event.preventDefault()
-// }
-
-// passwordElem.addEventListener(`copy`, copyHandler)
-// passwordElem.addEventListener(`cut`, cutHandler)
 
 const inputElem = $.querySelector(`form input`)
 const spanElem = $.querySelector(`.counter`)
@@ -162,7 +122,6 @@ const modalParent = $.querySelector(`.modal-parent`)
 const x = $.querySelector(`.X`)
 const sectionElem = $.querySelector(`section`)
 
-
 function showModal() {
     modalParent.style.display = `block`
     sectionElem.style.filter = `blur(10px)`
@@ -174,7 +133,7 @@ function hideModalWithX() {
 }
 
 function hideModalWithEsc(event) {
-    if (event.keyCode === 32 || event.keyCode === 13) {
+    if (event.keyCode === 27) {
         modalParent.style.display = `none`
         sectionElem.style.filter = `blur(0px)`
     }
@@ -195,7 +154,6 @@ switchElement.addEventListener(`click`, function() {
         localStorage.setItem(`theme`, `light`)
     }
 })
-
 
 window.onload = function() {
     let localStorageTheme = localStorage.getItem(`theme`)

@@ -200,16 +200,20 @@ body {
     cursor: pointer;
 }
 
-.form .form-element .toggle-password.active i.fa-eye {
+.form .form-element .toggle-password i.fa-eye {
     display: none;
 }
 
-.form .form-element .toggle-password.active i.fa-eye-slash {
+.form .form-element .toggle-password.active i.fa-eye {
     display: inline;
 }
 
-.form .form-element .toggle-password i.fa-eye-slash {
+.form .form-element .toggle-password.active i.fa-eye-slash {
     display: none;
+}
+
+.form .form-element .toggle-password i.fa-eye-slash {
+    display: inline;
 }
 
 .form .form-element .password-policies {
