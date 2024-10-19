@@ -27,7 +27,18 @@ let apple = {
 }
 
 function resetGame() {
-    window.location.reload()
+    score = 0
+    speed = 13
+    snake.x = grid * 5
+    snake.y = grid * 5
+    snake.vx = grid
+    snake.vy = 0
+    snake.cells = []
+    snake.maxCells = 4
+
+    // قرار دادن مجدد سیب در جای جدید
+    apple.x = getRandomInt(0, 24) * grid
+    apple.y = getRandomInt(0, 14) * grid
 }
 
 function Update() {
