@@ -1,0 +1,13 @@
+#canvas1 {
+    border: 3px solid black;
+    position: absolute;
+    top: 10%;
+    left: 35%;
+    transform: translate(-50px, -50px);
+    width: 500px;
+    height: 800px;
+}
+
+img {
+    display: none;
+}

@@ -36,7 +36,6 @@ function resetGame() {
     snake.cells = []
     snake.maxCells = 4
 
-    // قرار دادن مجدد سیب در جای جدید
     apple.x = getRandomInt(0, 24) * grid
     apple.y = getRandomInt(0, 14) * grid
 }
@@ -91,7 +90,6 @@ function Update() {
             apple.y = getRandomInt(0, 14) * grid
         }
 
-        // بررسی برخورد مار با خودش
         for (let i = index + 1; i < snake.cells.length; i++) {
             if (cell.x === snake.cells[i].x && cell.y === snake.cells[i].y) {
                 alert(`your score : ${score}`)
