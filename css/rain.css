@@ -1,0 +1,39 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: black;
+}
+canvas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 640px;
+    height: 905px;
+    transform: translate(-50%, -50%);
+}
+footer, article {
+  font-family: monospace;
+  width: 100%;
+  color: white;
+  font-size: 15px;
+  margin-left: 5px;
+  text-shadow: 1px 1px 1px #737373;
+}
+article {
+  padding: 10px;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 95%;
+  text-align: left;
+  padding-bottom: 15px;
+}
+footer a{
+  color: orangered;
+}
+article {
+  width: 48%;
+  font-size: 15px;
+}
