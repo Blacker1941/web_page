@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#canvas1 {
+    background: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+p, a {
+  position: absolute;
+  color: white;
+  text-shadow: 2px 2px black;
+}
+p {
+  max-width: 25%;
+  padding: 20px;
+}

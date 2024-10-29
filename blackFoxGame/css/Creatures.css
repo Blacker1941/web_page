@@ -3,7 +3,7 @@
     position: absolute;
     top: 10%;
     left: 35%;
-    transform: translate(-50px, -50px);
+    transform: translate(-50%, -50%);
     width: 500px;
     height: 800px;
 }
