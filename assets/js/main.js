@@ -78,14 +78,14 @@ let helpers = {
     if (hue == undefined) {
       return [0, 0, 0]
     }
-    var chroma = (1 - Math.abs(2 * lightness - 1)) * saturation
-    var huePrime = hue / 60
-    var secondComponent = chroma * (1 - Math.abs((huePrime % 2) - 1))
+    let chroma = (1 - Math.abs(2 * lightness - 1)) * saturation
+    let huePrime = hue / 60
+    let secondComponent = chroma * (1 - Math.abs((huePrime % 2) - 1))
 
     huePrime = ~~huePrime
-    var red
-    var green
-    var blue
+    let red
+    let green
+    let blue
 
     if (huePrime === 0) {
       red = chroma
@@ -113,7 +113,7 @@ let helpers = {
       blue = secondComponent
     }
 
-    var lightnessAdjustment = lightness - chroma / 2
+    let lightnessAdjustment = lightness - chroma / 2
     red += lightnessAdjustment
     green += lightnessAdjustment
     blue += lightnessAdjustment

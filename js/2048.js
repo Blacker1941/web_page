@@ -1,70 +1,70 @@
-const gridContainer = document.getElementById('grid-container');
-const scoreDisplay = document.getElementById('score');
-const restartButton = document.getElementById('restart-button');
+const gridContainer = document.getElementById('grid-container'); // انتخاب عنصر کانتینر گرید
+const scoreDisplay = document.getElementById('score'); // انتخاب عنصر نمایش امتیاز
+const restartButton = document.getElementById('restart-button'); // انتخاب دکمه ریست
 
-let grid = [];
-let score = 0;
+let grid = []; // گرید بازی
+let score = 0; // امتیاز بازی
 
 function init() {
-    grid = [
+    grid = [ // ایجاد گرید اولیه ۴x۴ با مقادیر صفر
         [0, 0, 0, 0],
         [0, 0, 0, 0],
         [0, 0, 0, 0],
         [0, 0, 0, 0]
     ];
-    score = 0;
-    updateDisplay();
-    generateRandomTile();
-    generateRandomTile();
+    score = 0; // ریست امتیاز
+    updateDisplay(); // به‌روزرسانی نمایش
+    generateRandomTile(); // تولید یک کاشی تصادفی
+    generateRandomTile(); // تولید کاشی تصادفی دوم
 }
 
-function generateRandomTile() {
-    let emptyCells = [];
+function generateRandomTile() { // تولید کاشی جدید در گرید
+    let emptyCells = []; // آرایه برای ذخیره خانه‌های خالی
     for (let i = 0; i < 4; i++) {
         for (let j = 0; j < 4; j++) {
             if (grid[i][j] === 0) {
-                emptyCells.push({ x: i, y: j });
+                emptyCells.push({ x: i, y: j }); // افزودن خانه خالی به آرایه
             }
         }
     }
-    if (emptyCells.length > 0) {
+    if (emptyCells.length > 0) { // اگر خانه خالی وجود دارد
         let randomCell = emptyCells[Math.floor(Math.random() * emptyCells.length)];
-        grid[randomCell.x][randomCell.y] = Math.random() < 0.9 ? 2 : 4;
+        grid[randomCell.x][randomCell.y] = Math.random() < 0.9 ? 2 : 4; // قرار دادن ۲ یا ۴ در خانه تصادفی
     }
 }
 
-function updateDisplay() {
-    gridContainer.innerHTML = '';
+function updateDisplay() { // به‌روزرسانی نمایش گرید و امتیاز
+    gridContainer.innerHTML = ''; // پاک‌کردن کانتینر گرید
     for (let i = 0; i < 4; i++) {
         for (let j = 0; j < 4; j++) {
-            const cell = document.createElement('div');
-            cell.classList.add('grid-cell');
+            const cell = document.createElement('div'); // ایجاد خانه جدید
+            cell.classList.add('grid-cell'); // افزودن کلاس
             if (grid[i][j] > 0) {
-                cell.classList.add(`grid-cell-${grid[i][j]}`);
-                cell.textContent = grid[i][j];
+                cell.classList.add(`grid-cell-${grid[i][j]}`); // افزودن کلاس بر اساس مقدار
+                cell.textContent = grid[i][j]; // نمایش مقدار
             }
-            gridContainer.appendChild(cell);
+            gridContainer.appendChild(cell); // افزودن خانه به کانتینر
         }
     }
-    scoreDisplay.textContent = `score: ${score}`;
+    scoreDisplay.textContent = `score: ${score}`; // نمایش امتیاز
 }
 
-function move(direction) {
-    let moved = false;
-    let newGrid = grid.map(row => row.slice());
+function move(direction) { // حرکت بر اساس جهت
+    let moved = false; // آیا حرکتی انجام شده است؟
+    let newGrid = grid.map(row => row.slice()); // ایجاد کپی از گرید
 
-    switch (direction) {
+    switch (direction) { // حرکت به بالا، پایین، چپ یا راست
         case 'up':
             for (let col = 0; col < 4; col++) {
-                let stack = [];
+                let stack = []; // آرایه برای ذخیره کاشی‌ها
                 for (let row = 0; row < 4; row++) {
                     if (newGrid[row][col] !== 0) {
-                        stack.push(newGrid[row][col]);
+                        stack.push(newGrid[row][col]); // افزودن کاشی غیر صفر به استک
                     }
                 }
-                stack = combineTiles(stack);
+                stack = combineTiles(stack); // ترکیب کاشی‌ها
                 for (let row = 0; row < 4; row++) {
-                    newGrid[row][col] = stack[row] || 0;
+                    newGrid[row][col] = stack[row] || 0; // قرار دادن مقادیر در گرید
                 }
             }
             break;
@@ -112,56 +112,59 @@ function move(direction) {
             break;
     }
 
+    // بررسی تغییرات گرید
     if (JSON.stringify(newGrid) !== JSON.stringify(grid)) {
-        grid = newGrid;
-        generateRandomTile();
-        moved = true;
+        grid = newGrid; // به‌روزرسانی گرید
+        generateRandomTile(); // تولید کاشی جدید
+        moved = true; // حرکتی انجام شده است
     }
 
     if (moved) {
-        updateDisplay();
-        checkGameOver();
+        updateDisplay(); // به‌روزرسانی نمایش
+        checkGameOver(); // بررسی پایان بازی
     }
 }
 
-function combineTiles(stack) {
+function combineTiles(stack) { // ترکیب کاشی‌ها در استک
     let newStack = [];
     for (let i = 0; i < stack.length; i++) {
-        if (stack[i] === stack[i + 1]) {
-            newStack.push(stack[i] * 2);
-            score += stack[i] * 2;
-            i++;
+        if (stack[i] === stack[i + 1]) { // اگر دو کاشی برابر بودند
+            newStack.push(stack[i] * 2); // ترکیب و افزایش امتیاز
+            score += stack[i] * 2; // به‌روزرسانی امتیاز
+            i++; // پرش به کاشی بعدی
         } else {
-            newStack.push(stack[i]);
+            newStack.push(stack[i]); // افزودن کاشی به استک جدید
         }
     }
-    return newStack;
+    return newStack; // بازگشت استک جدید
 }
 
-function checkGameOver() {
-    if (grid.flat().every(cell => cell !== 0)) {
-        alert('Game over! Final score: ' + score);
-        init();
+function checkGameOver() { // بررسی پایان بازی
+    if (grid.flat().every(cell => cell !== 0)) { // اگر هیچ خانه خالی وجود نداشته باشد
+        alert('Game over! Final score: ' + score); // نمایش پیام پایان بازی
+        init(); // ریست بازی
     }
 }
 
+// مدیریت ورودی کیبورد
 document.addEventListener('keydown', (event) => {
     switch (event.key) {
         case 'ArrowUp':
-            move('up');
+            move('up'); // حرکت به بالا
             break;
         case 'ArrowDown':
-            move('down');
+            move('down'); // حرکت به پایین
             break;
         case 'ArrowLeft':
-            move('left');
+            move('left'); // حرکت به چپ
             break;
         case 'ArrowRight':
-            move('right');
+            move('right'); // حرکت به راست
             break;
     }
 });
 
+// ریست بازی با کلیک دکمه
 restartButton.addEventListener('click', init);
 
-init();
+init(); // شروع بازی

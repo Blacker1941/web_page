@@ -1,5 +1,6 @@
 "use strict"
 
+// دسترسی به عناصر HTML برای نمایش آهنگ
 const image = document.querySelector("#cover")
 const title = document.getElementById("title")
 const artist = document.getElementById("artist")
@@ -13,31 +14,17 @@ const playBtn = document.getElementById("play")
 const nextBtn = document.getElementById("next")
 const background = document.getElementById("background")
 
-// Music
-const songs = [{
-        path: "media/html.mp4",
-        displayName: "Html Padcast",
-        artist: "Ozbi",
-        cover: "https://images.genius.com/ee202c6f724ffd4cf61bd01a205eeb47.1000x1000x1.jpg",
-    },
-    {
-        path: "media/kar.mp4",
-        displayName: "Developing",
-        artist: "Flora Cash",
-        cover: "image/peakpx.jpg",
-    },
-    {
-        path: "media/bazar.mp4",
-        displayName: "Earn",
-        artist: "Linkin Park",
-        cover: "https://images.genius.com/c5a58cdaab9f3199214f0e3c26abbd0e.1000x1000x1.jpg",
-    },
+// آرایه‌ای از آهنگ‌ها با اطلاعات مربوط به هر آهنگ
+const songs = [
+    { path: "media/html.mp4", displayName: "Html Padcast", artist: "Ozbi", cover: "https://images.genius.com/ee202c6f724ffd4cf61bd01a205eeb47.1000x1000x1.jpg" },
+    { path: "media/kar.mp4", displayName: "Developing", artist: "Flora Cash", cover: "image/peakpx.jpg" },
+    { path: "media/bazar.mp4", displayName: "Earn", artist: "Linkin Park", cover: "https://images.genius.com/c5a58cdaab9f3199214f0e3c26abbd0e.1000x1000x1.jpg" }
 ]
 
-// Check if Playing
+// تعیین وضعیت پخش
 let isPlaying = false
 
-// Play
+// پخش آهنگ
 function playSong() {
     isPlaying = true
     playBtn.classList.replace("fa-play", "fa-pause")
@@ -45,7 +32,7 @@ function playSong() {
     music.play()
 }
 
-// Pause
+// توقف آهنگ
 function pauseSong() {
     isPlaying = false
     playBtn.classList.replace("fa-pause", "fa-play")
@@ -53,24 +40,20 @@ function pauseSong() {
     music.pause()
 }
 
-// Play or Pause Event Listener
+// تغییر وضعیت پخش/توقف بر اساس کلیک کاربر
 playBtn.addEventListener("click", function() {
-    if (isPlaying) {
-        pauseSong()
-    } else {
-        playSong()
-    }
+    isPlaying ? pauseSong() : playSong()
 })
 
-// Update DOM
+// بارگذاری آهنگ جدید
 function loadSong(song) {
-    console.log(song)
     title.textContent = song.displayName
     artist.textContent = song.artist
     music.src = song.path
     changeCover(song.cover)
 }
 
+// تغییر کاور و پس‌زمینه آهنگ
 function changeCover(cover) {
     image.classList.remove("active")
     setTimeout(() => {
@@ -80,61 +63,45 @@ function changeCover(cover) {
     background.src = cover
 }
 
-// Current Song
+// آهنگ فعلی
 let songIndex = 0
 
-// Previous Song
+// پخش آهنگ قبلی
 function prevSong() {
-    songIndex--
-    if (songIndex < 0) {
-        songIndex = songs.length - 1
-    }
+    songIndex = songIndex > 0 ? songIndex - 1 : songs.length - 1
     loadSong(songs[songIndex])
     playSong()
 }
 
-// Next Song
+// پخش آهنگ بعدی
 function nextSong() {
-    songIndex++
-    if (songIndex > songs.length - 1) {
-        songIndex = 0
-    }
+    songIndex = songIndex < songs.length - 1 ? songIndex + 1 : 0
     loadSong(songs[songIndex])
     playSong()
 }
 
-// On Load - Select First Song
+// بارگذاری اولین آهنگ
 loadSong(songs[songIndex])
 
-// Update Progress Bar & Time
+// به‌روزرسانی نوار پیشرفت و زمان
 function updateProgressBar(e) {
     if (isPlaying) {
         const duration = e.srcElement.duration
         const currentTime = e.srcElement.currentTime
-            // Update progress bar width
-        const progressPercent = (currentTime / duration) * 100
-        progress.style.width = progressPercent + "%"
-            // Calculate display for duration
+        progress.style.width = (currentTime / duration) * 100 + "%"
+
+        // محاسبه و نمایش زمان آهنگ
         const durationMinutes = Math.floor(duration / 60)
-        let durationSeconds = Math.floor(duration % 60)
-        if (durationSeconds < 10) {
-            durationSeconds = "0" + durationSeconds
-        }
-        // Delay switching duration Element to avoid NaN
-        if (durationSeconds) {
-            durationEl.textContent = durationMinutes + ":" + durationSeconds
-        }
-        // Calculate display for currentTime
+        let durationSeconds = Math.floor(duration % 60).toString().padStart(2, "0")
+        durationEl.textContent = durationMinutes + ":" + durationSeconds
+
         const currentMinutes = Math.floor(currentTime / 60)
-        let currentSeconds = Math.floor(currentTime % 60)
-        if (currentSeconds < 10) {
-            currentSeconds = "0" + currentSeconds
-        }
+        let currentSeconds = Math.floor(currentTime % 60).toString().padStart(2, "0")
         currentTimeEl.textContent = currentMinutes + ":" + currentSeconds
     }
 }
 
-// Set Progress Bar
+// تنظیم نوار پیشرفت بر اساس کلیک کاربر
 function setProgressBar(e) {
     const width = this.clientWidth
     const clickX = e.offsetX
@@ -142,9 +109,10 @@ function setProgressBar(e) {
     music.currentTime = (clickX / width) * duration
 }
 
-// Event Listeners
+// رویدادهای مربوط به دکمه‌ها و نوار پیشرفت
 prevBtn.addEventListener("click", prevSong)
 nextBtn.addEventListener("click", nextSong)
 music.addEventListener("ended", nextSong)
 music.addEventListener("timeupdate", updateProgressBar)
 progressContainer.addEventListener("click", setProgressBar)
+
